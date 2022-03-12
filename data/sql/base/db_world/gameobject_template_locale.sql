@@ -12,10 +12,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Дамп структуры для таблица _acore_world.gameobject_template_locale
+-- Дамп структуры для таблица acore_world.gameobject_template_locale
 DROP TABLE IF EXISTS `gameobject_template_locale`;
 CREATE TABLE IF NOT EXISTS `gameobject_template_locale` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT 0,
+  `entry` MEDIUMINT unsigned NOT NULL DEFAULT 0,
   `locale` varchar(4) NOT NULL,
   `name` text DEFAULT NULL,
   `castBarCaption` text DEFAULT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `gameobject_template_locale` (
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы _acore_world.gameobject_template_locale: 159 204 rows
+-- Дамп данных таблицы acore_world.gameobject_template_locale: 159 204 rows
 DELETE FROM `gameobject_template_locale`;
 /*!40000 ALTER TABLE `gameobject_template_locale` DISABLE KEYS */;
 INSERT INTO `gameobject_template_locale` (`entry`, `locale`, `name`, `castBarCaption`, `VerifiedBuild`) VALUES

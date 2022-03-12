@@ -12,10 +12,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Дамп структуры для таблица _acore_world.creature_template_locale
+-- Дамп структуры для таблица acore_world.creature_template_locale
 DROP TABLE IF EXISTS `creature_template_locale`;
 CREATE TABLE IF NOT EXISTS `creature_template_locale` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT 0,
+  `entry` MEDIUMINT unsigned NOT NULL DEFAULT 0,
   `locale` varchar(4) NOT NULL,
   `Name` text DEFAULT NULL,
   `Title` text DEFAULT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `creature_template_locale` (
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы _acore_world.creature_template_locale: 218 008 rows
+-- Дамп данных таблицы acore_world.creature_template_locale: 218 014 rows
 DELETE FROM `creature_template_locale`;
 /*!40000 ALTER TABLE `creature_template_locale` DISABLE KEYS */;
 INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`) VALUES
@@ -218055,7 +218055,13 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `Ver
 	(31579, 'koKR', '신비술사 아두린', '명예 병참 장교의 상징', 18019),
 	(31579, 'ruRU', 'Чародей Адурин', 'Эмблема почетного квартирмейстера', 18019),
 	(31579, 'zhCN', '奥术师埃杜林', '勇气纹章军需官', 18019),
-	(31579, 'zhTW', '秘法師阿度靈', '榮譽軍需官徽章', 18019);
+	(31579, 'zhTW', '秘法師阿度靈', '榮譽軍需官徽章', 18019),
+	(8673, 'esES', 'Subastador Thathung', '', 18019),
+	(8673, 'esMX', 'Subastador Thathung', '', 18019),
+	(9856, 'esES', 'Subastador Grimful', '', 18019),
+	(9856, 'esMX', 'Subastador Grimful', '', 18019),
+	(8724, 'esES', 'Subastador Wabang', '', 18019),
+	(8724, 'esMX', 'Subastador Wabang', '', 18019);
 /*!40000 ALTER TABLE `creature_template_locale` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
