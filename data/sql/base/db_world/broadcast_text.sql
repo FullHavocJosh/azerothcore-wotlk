@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Хост:                         127.0.0.1
--- Версия сервера:               10.6.4-MariaDB - mariadb.org binary distribution
--- Операционная система:         Win64
--- HeidiSQL Версия:              11.3.0.6295
+-- Värd:                         127.0.0.1
+-- Serverversion:                8.0.28 - MySQL Community Server - GPL
+-- Server-OS:                    Win64
+-- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,13 +12,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Дамп структуры для таблица acore_world.broadcast_text
+-- Dumpar struktur för tabell acore_world.broadcast_text
 DROP TABLE IF EXISTS `broadcast_text`;
 CREATE TABLE IF NOT EXISTS `broadcast_text` (
   `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
   `LanguageID` MEDIUMINT DEFAULT NULL,
-  `MaleText` longtext DEFAULT NULL,
-  `FemaleText` longtext DEFAULT NULL,
+  `MaleText` longtext,
+  `FemaleText` longtext,
   `EmoteID1` MEDIUMINT DEFAULT NULL,
   `EmoteID2` MEDIUMINT DEFAULT NULL,
   `EmoteID3` MEDIUMINT DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `broadcast_text` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы acore_world.broadcast_text: 73 039 rows
+-- Dumpar data för tabell acore_world.broadcast_text: 73 039 rows
 DELETE FROM `broadcast_text`;
 /*!40000 ALTER TABLE `broadcast_text` DISABLE KEYS */;
 INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `EmoteID1`, `EmoteID2`, `EmoteID3`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `SoundEntriesId`, `EmotesID`, `Flags`, `VerifiedBuild`) VALUES

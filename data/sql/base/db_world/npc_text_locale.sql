@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Хост:                         127.0.0.1
--- Версия сервера:               10.6.4-MariaDB - mariadb.org binary distribution
--- Операционная система:         Win64
--- HeidiSQL Версия:              11.3.0.6295
+-- Värd:                         127.0.0.1
+-- Serverversion:                8.0.28 - MySQL Community Server - GPL
+-- Server-OS:                    Win64
+-- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,31 +12,31 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Дамп структуры для таблица acore_world.npc_text_locale
+-- Dumpar struktur för tabell acore_world.npc_text_locale
 DROP TABLE IF EXISTS `npc_text_locale`;
 CREATE TABLE IF NOT EXISTS `npc_text_locale` (
   `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `Locale` varchar(4) NOT NULL,
-  `Text0_0` longtext DEFAULT NULL,
-  `Text0_1` longtext DEFAULT NULL,
-  `Text1_0` longtext DEFAULT NULL,
-  `Text1_1` longtext DEFAULT NULL,
-  `Text2_0` longtext DEFAULT NULL,
-  `Text2_1` longtext DEFAULT NULL,
-  `Text3_0` longtext DEFAULT NULL,
-  `Text3_1` longtext DEFAULT NULL,
-  `Text4_0` longtext DEFAULT NULL,
-  `Text4_1` longtext DEFAULT NULL,
-  `Text5_0` longtext DEFAULT NULL,
-  `Text5_1` longtext DEFAULT NULL,
-  `Text6_0` longtext DEFAULT NULL,
-  `Text6_1` longtext DEFAULT NULL,
-  `Text7_0` longtext DEFAULT NULL,
-  `Text7_1` longtext DEFAULT NULL,
+  `Locale` VARCHAR(4) NOT NULL,
+  `Text0_0` longtext,
+  `Text0_1` longtext,
+  `Text1_0` longtext,
+  `Text1_1` longtext,
+  `Text2_0` longtext,
+  `Text2_1` longtext,
+  `Text3_0` longtext,
+  `Text3_1` longtext,
+  `Text4_0` longtext,
+  `Text4_1` longtext,
+  `Text5_0` longtext,
+  `Text5_1` longtext,
+  `Text6_0` longtext,
+  `Text6_1` longtext,
+  `Text7_0` longtext,
+  `Text7_1` longtext,
   PRIMARY KEY (`ID`,`Locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Дамп данных таблицы acore_world.npc_text_locale: ~24 079 rows (приблизительно)
+-- Dumpar data för tabell acore_world.npc_text_locale: ~22 865 rows (ungefär)
 DELETE FROM `npc_text_locale`;
 /*!40000 ALTER TABLE `npc_text_locale` DISABLE KEYS */;
 INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, `Text1_1`, `Text2_0`, `Text2_1`, `Text3_0`, `Text3_1`, `Text4_0`, `Text4_1`, `Text5_0`, `Text5_1`, `Text6_0`, `Text6_1`, `Text7_0`, `Text7_1`) VALUES
