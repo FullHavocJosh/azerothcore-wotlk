@@ -15,15 +15,15 @@
 -- Dumpar struktur för tabell acore_world.item_template_locale
 DROP TABLE IF EXISTS `item_template_locale`;
 CREATE TABLE IF NOT EXISTS `item_template_locale` (
-  `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `locale` VARCHAR(4) NOT NULL,
+  `ID` mediumint unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) NOT NULL,
   `Name` text,
   `Description` text,
-  `VerifiedBuild` SMALLINT DEFAULT 0,
+  `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumpar data för tabell acore_world.item_template_locale: ~322 098 rows (ungefär)
+-- Dumpar data för tabell acore_world.item_template_locale: ~313 217 rows (ungefär)
 DELETE FROM `item_template_locale`;
 /*!40000 ALTER TABLE `item_template_locale` DISABLE KEYS */;
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
@@ -149926,6 +149926,7 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(27807, 'zhTW', '風元素氣體', '冰凍為固體!', 15050),
 	(27808, 'deDE', 'Schlüssel für Spring-o-Mat 4000', 'Auf der Seite steht: Wazdaz kann für Unfälle, die auf Grund der Benutzung des Spring-o-Mats 4000 verursacht wurden, nicht haftbar gemacht werden.', 18019),
 	(27808, 'ruRU', 'Ключ от прыготрона 4000', 'Сбоку выгравировано: Вазат не несёт ответственности за несчастные случаи при использовании прыготрона 4000.', 0),
+	(27808, 'zhCN', '超级蹦床4000型的钥匙', '钥匙上刻有一行小字：瓦萨特不对使用超级蹦床4000型所造成的任何后果负责。', -12340),
 	(27809, 'deDE', 'Scharfkantiger Tiefenperidot', 'Am besten für einen gelben oder blauen Sockel geeignet.', -12340),
 	(27809, 'esES', 'Peridoto intenso dentado', 'Encaja en una ranura de color amarillo o azul.', -12340),
 	(27809, 'esMX', 'Peridoto intenso dentado', 'Encaja en una ranura de color amarillo o azul.', -12340),
@@ -150039,9 +150040,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(27824, 'koKR', '끝없는 어둠 너머의 로브', '', 15050),
 	(27824, 'ruRU', 'Одеяние Великой запредельной тьмы', '', 15050),
 	(27824, 'zhCN', '黑暗虚空长袍', '', 15050),
-	(27824, 'zhTW', '渾沌黑暗長袍', '', 15050),
-	(27825, 'deDE', 'Räuberische Handschuhe', '', 15050);
+	(27824, 'zhTW', '渾沌黑暗長袍', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(27825, 'deDE', 'Räuberische Handschuhe', '', 15050),
 	(27825, 'esES', 'Guantes depredadores', '', 15050),
 	(27825, 'esMX', 'Guantes depredadores', '', 15050),
 	(27825, 'frFR', 'Gantelets prédateurs', '', 15050),
@@ -160040,9 +160041,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(29220, 'ruRU', 'Синий крылобег', 'Обучает управлению этим средством передвижения.', 15050),
 	(29220, 'zhCN', '蓝色陆行鸟', '教你学会召唤这种坐骑。', 15050),
 	(29220, 'zhTW', '藍色陸行鷹', '教你學會如何召喚這個坐騎。', 15050),
-	(29221, 'deDE', 'Schwarzer Falkenschreiter', 'Lehrt Euch, wie man dieses Reittier beschwört.', 15050),
-	(29221, 'esES', 'Halcón zancudo negro', 'Te enseña a invocar esta montura.', 15050);
+	(29221, 'deDE', 'Schwarzer Falkenschreiter', 'Lehrt Euch, wie man dieses Reittier beschwört.', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(29221, 'esES', 'Halcón zancudo negro', 'Te enseña a invocar esta montura.', 15050),
 	(29221, 'esMX', 'Halcón zancudo negro', 'Te enseña a invocar esta montura.', 15050),
 	(29221, 'frFR', 'Faucon-pérégrin noir', 'Vous apprend à invoquer cette monture.', 15050),
 	(29221, 'koKR', '검은 매타조', '탈것 소환하는 법을 배웁니다.', 15050),
@@ -170041,9 +170042,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(30748, 'zhTW', '附魔師背袋', '', 15050),
 	(30749, 'deDE', 'Draenische Übungsklinge', 'Generationen von Kriegern haben mit diesen Klingen geübt', 15050),
 	(30749, 'esES', 'Hoja de entrenamiento draénica', 'Generaciones de guerreros se han formado con el acero de estas armas.', 15050),
-	(30749, 'esMX', 'Hoja de entrenamiento draénica', 'Generaciones de guerreros se han formado con el acero de estas armas.', 15050),
-	(30749, 'frFR', 'Lame d\'entraînement draenique', 'Des générations de guerriers se sont entraînées avec cette arme.', 15050);
+	(30749, 'esMX', 'Hoja de entrenamiento draénica', 'Generaciones de guerreros se han formado con el acero de estas armas.', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(30749, 'frFR', 'Lame d\'entraînement draenique', 'Des générations de guerriers se sont entraînées avec cette arme.', 15050),
 	(30749, 'koKR', '드레나이 대련용 검', '수 세대의 전사들이 이 검으로 훈련 과정을 거쳐왔습니다.', 15050),
 	(30749, 'ruRU', 'Дренейский клинок для поединков', 'Несколько поколений воинов тренировалось с этими клинками.', 15050),
 	(30749, 'zhCN', '德拉诺斗剑', '一代又一代的战士使用这些武器进行训练', 15050),
@@ -180042,9 +180043,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(32098, 'deDE', 'Mondstoffgugel des Kanzlers', '', 15050),
 	(32098, 'esES', 'Capucha de tela lunar de canciller', '', 15050),
 	(32098, 'esMX', 'Capucha de tela lunar de canciller', '', 15050),
-	(32098, 'frFR', 'Capuche de chancelier en étoffe lunaire', '', 15050),
-	(32098, 'koKR', '장관의 달빛매듭 수도두건', '', 15050);
+	(32098, 'frFR', 'Capuche de chancelier en étoffe lunaire', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(32098, 'koKR', '장관의 달빛매듭 수도두건', '', 15050),
 	(32098, 'ruRU', 'Клобук советника из луноткани', '', 15050),
 	(32098, 'zhCN', '幕僚长的月布罩帽', '', 15050),
 	(32098, 'zhTW', '大法官月布風帽', '', 15050),
@@ -190043,9 +190044,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(33510, 'esMX', 'Ídolo de la luna oculta', '', 15050),
 	(33510, 'frFR', 'Idole de la lune invisible', '', 15050),
 	(33510, 'koKR', '숨은 달의 우상', '', 15050),
-	(33510, 'ruRU', 'Идол Невидимой луны', '', 15050),
-	(33510, 'zhCN', '隐月神像', '', 15050);
+	(33510, 'ruRU', 'Идол Невидимой луны', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(33510, 'zhCN', '隐月神像', '', 15050),
 	(33510, 'zhTW', '隱月塑像', '', 15050),
 	(33511, 'deDE', 'NPC Equip 33511', '', 15050),
 	(33512, 'deDE', 'Grimmiger Todeshandschutz', '', 15050),
@@ -200044,9 +200045,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(35047, 'esMX', 'Arco largo de Gladiador brutal', '', 15050),
 	(35047, 'frFR', 'Arc long du gladiateur brutal', '', 15050),
 	(35047, 'koKR', '야만적인 검투사의 장궁', '', 15050),
-	(35047, 'ruRU', 'Длинный лук жестокого гладиатора', '', 15050),
-	(35047, 'zhCN', '野蛮角斗士的长弓', '', 15050);
+	(35047, 'ruRU', 'Длинный лук жестокого гладиатора', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(35047, 'zhCN', '野蛮角斗士的长弓', '', 15050),
 	(35047, 'zhTW', '野蠻鬥士長弓', '', 15050),
 	(35048, 'deDE', 'Panzerrüstung des brutalen Gladiators', '', 15050),
 	(35048, 'esES', 'Armadura de malla de Gladiador brutal', '', 15050),
@@ -210045,9 +210046,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(36386, 'ruRU', 'Тяжелые наручи голема', '', 15050),
 	(36386, 'zhCN', '魔像臂甲', '', 15050),
 	(36386, 'zhTW', '魔像護臂', '', 15050),
-	(36387, 'deDE', 'Klagegeistgürtel', '', 15050),
-	(36387, 'esES', 'Cinturón de aparecido', '', 15050);
+	(36387, 'deDE', 'Klagegeistgürtel', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(36387, 'esES', 'Cinturón de aparecido', '', 15050),
 	(36387, 'esMX', 'Cinturón de aparecido', '', 15050),
 	(36387, 'frFR', 'Ceinture de revenant', '', 15050),
 	(36387, 'koKR', '망령 허리띠', '', 15050),
@@ -217258,8 +217259,8 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(37346, 'zhCN', '公式：附魔护腕 - 精准', '教你学会永久性地为一副护腕附魔，使其获得精准等级+15的效果。该装备等级不得低于60级。', 15050),
 	(37346, 'zhTW', '公式:附魔護腕 - 熟練', '教你學會如何永久地為一副護腕附魔，使其提高15點熟練等級。需要等級60或以上的物品。', 15050),
 	(37347, 'deDE', 'Formel: Umhang - Titangewebe', 'Lehrt Euch, Umhänge dauerhaft so zu verzaubern, dass sie die Verteidigungswertung um 16 erhöhen. Erfordert einen Gegenstand der Stufe 60 oder höher.', -12340),
-	(37347, 'esES', 'Fórmula: encantar capa: tejido de titán', 'Te enseña a encantar de forma permanente una capa para aumentar el índice de esquivar 16 p. Requiere un objeto de nivel 60 o superior.', -12340),
-	(37347, 'esMX', 'Fórmula: encantar capa: esquivar superior', 'Te enseña a encantar de forma permanente una capa para aumentar el índice de esquivar 18 p. Requiere un objeto de nivel 60 o superior.', -12340),
+	(37347, 'esES', 'Fórmula: encantar capa: tejido de titán', 'Te enseña a encantar de forma permanente una capa para aumentar el índice de defensa 16 p. Requiere un objeto de nivel 60 o superior.', -12340),
+	(37347, 'esMX', 'Fórmula: encantar capa: tejido de titán', 'Te enseña a encantar de forma permanente una capa para aumentar el índice de defensa 16 p. Requiere un objeto de nivel 60 o superior.', -12340),
 	(37347, 'frFR', 'Formule : Enchantement de cape (Tisse-titan)', 'Vous apprend à enchanter de manière permanente une cape pour augmenter votre score de défense de 16. Nécessite un objet de niveau 60 ou supérieur.', -12340),
 	(37347, 'koKR', '주문식: 망토 마법부여 - 최상급 회피', '망토에 영구적으로 마법을 부여해 착용자의 회피 숙련도를 18만큼 증가시키는 방법을 배웁니다. 60 레벨 이상의 아이템에만 사용할 수 있습니다.', -12340),
 	(37347, 'ruRU', 'Формула чар для плаща - ткань титанов', 'Обучает наложению на плащ чар, повышающих рейтинг защиты на 16. Требуется предмет для персонажей не ниже 60-го уровня.', -12340),
@@ -217274,9 +217275,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(37348, 'zhCN', '公式：附魔披风 - 急速', '教你学会永久性地为一件披风附魔，使其获得急速等级+20的效果。该装备等级不得低于60级。', 15050),
 	(37348, 'zhTW', '公式:附魔披風 - 加速', '教你學會如何永久地為一件披風附魔，使其提高20點加速等級。需要等級60或以上的物品。', 15050),
 	(37349, 'deDE', 'Formel: Umhang - Schattenrüstung', 'Lehrt Euch, Umhänge dauerhaft zu verzaubern, sodass die Beweglichkeit um 10 und Rüstung um 40 erhöht wird. Erfordert einen Gegenstand der Stufe 60 oder höher.', 15050),
-	(37349, 'esES', 'Fórmula: encantar capa: armadura de las Sombras', 'Te enseña a encantar de forma permanente una capa para aumentar la agilidad 10 p. y la armadura 40 p. Requiere un objeto de nivel 60 o superior.', 15050),
-	(37349, 'esMX', 'Fórmula: encantar capa: armadura de las Sombras', 'Te enseña a encantar de forma permanente una capa para aumentar la agilidad 10 p. y la armadura 40 p. Requiere un objeto de nivel 60 o superior.', 15050),
-	(37349, 'frFR', 'Formule : Enchantement de cape (Armure de l\'ombre)', 'Vous apprend à enchanter de manière permanente une cape pour augmenter légèrement votre Agilité de 10 et votre Armure de 40. Nécessite un objet de niveau 60 ou supérieur.', 15050),
+	(37349, 'esES', 'Fórmula: encantar capa: armadura de las Sombras', 'Te enseña a encantar de forma permanente una capa para que aumente el sigilo ligeramente y la agilidad 10 p. Requiere un objeto de nivel 60 o superior.', 15050),
+	(37349, 'esMX', 'Fórmula: encantar capa: armadura de las Sombras', 'Te enseña a encantar de forma permanente una capa para que aumente el sigilo ligeramente y la agilidad 10 p. Requiere un objeto de nivel 60 o superior.', 15050),
+	(37349, 'frFR', 'Formule : Enchantement de cape (Armure de l\'ombre)', 'Vous apprend à enchanter de manière permanente une cape pour augmenter légèrement le camouflage et ajoute 10 à l\'Agilité. Nécessite un objet de niveau 60 ou supérieur.', 15050),
 	(37349, 'koKR', '주문식: 망토 마법부여 - 어둠의 갑옷', '망토에 영구적으로 마법을 부여해 착용자의 민첩성을 10만큼, 방어도를 40만큼 증가시키는 방법을 배웁니다. 60 레벨 이상의 아이템에만 사용할 수 있습니다.', 15050),
 	(37349, 'ruRU', 'Формула чар для плаща - теневая броня', 'Обучает наложению на плащ чар, повышающих ловкость на 10 и усиливающих броню на 40. Требуется предмет не ниже 60-го уровня.', 15050),
 	(37349, 'zhCN', '公式：附魔披风 - 暗影护甲', '教你学会永久性地为一件披风附魔，使其获得敏捷提高10点、护甲值提高40点的效果。该装备等级不得低于60级。', 15050),
@@ -220046,9 +220047,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(37715, 'frFR', 'Capuche du troll redoutable', '', 15050),
 	(37715, 'koKR', '광포한 트롤의 수도두건', '', 15050),
 	(37715, 'ruRU', 'Клобук свирепого тролля', '', 15050),
-	(37715, 'zhCN', '恐怖巨魔兜帽', '', 15050),
-	(37715, 'zhTW', '兇暴食人妖風帽', '', 15050);
+	(37715, 'zhCN', '恐怖巨魔兜帽', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(37715, 'zhTW', '兇暴食人妖風帽', '', 15050),
 	(37716, 'deDE', 'Blendgranate', '', 15050),
 	(37716, 'esES', 'Granada cegadora', '', 15050),
 	(37716, 'esMX', 'Granada cegadora', '', 15050),
@@ -230047,9 +230048,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(39169, 'ruRU', 'Шипастый наплеч острозуба', '', 15050),
 	(39169, 'zhCN', '锋锐利齿护肩', '', 15050),
 	(39169, 'zhTW', '鋒利銳牙肩甲', '', 15050),
-	(39170, 'deDE', 'Fellbesetzte Worgtöterschiftung', '', 15050),
-	(39170, 'esES', 'Bufas de matahuargos forradas', '', 15050);
+	(39170, 'deDE', 'Fellbesetzte Worgtöterschiftung', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(39170, 'esES', 'Bufas de matahuargos forradas', '', 15050),
 	(39170, 'esMX', 'Bufas de matahuargos forradas', '', 15050),
 	(39170, 'frFR', 'Spallières fourrées de tueur de worg', '', 15050),
 	(39170, 'koKR', '모피 덧댄 늑대학살자 어깨덮개', '', 15050),
@@ -240048,9 +240049,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(40505, 'koKR', '용기의 지하추적자 머리쓰개', '', 15050),
 	(40505, 'ruRU', 'Доблестный головной убор расхитителя гробниц', '', 15050),
 	(40505, 'zhCN', '勇猛的地穴追猎者头饰', '', 15050),
-	(40505, 'zhTW', '悍勇地穴巡者首盔', '', 15050),
-	(40506, 'deDE', 'Beinschützer des tapferen Gruftpirschers', '', 15050);
+	(40505, 'zhTW', '悍勇地穴巡者首盔', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(40506, 'deDE', 'Beinschützer des tapferen Gruftpirschers', '', 15050),
 	(40506, 'esES', 'Musleras de acechacriptas valerosas', '', 15050),
 	(40506, 'esMX', 'Musleras de acechacriptas valerosas', '', 15050),
 	(40506, 'frFR', 'Garde-jambes de traqueur des cryptes valeureux', '', 15050),
@@ -250049,9 +250050,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(41920, 'esES', 'Toga de satén de Gladiador mortal', '', 15050),
 	(41920, 'esMX', 'Toga de satén de Gladiador mortal', '', 15050),
 	(41920, 'frFR', 'Robe du gladiateur fatal en satin', '', 15050),
-	(41920, 'koKR', '죽음을 부르는 검투사의 명주 로브', '', 15050),
-	(41920, 'ruRU', 'Атласное одеяние смертоносного гладиатора', '', 15050);
+	(41920, 'koKR', '죽음을 부르는 검투사의 명주 로브', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(41920, 'ruRU', 'Атласное одеяние смертоносного гладиатора', '', 15050),
 	(41920, 'zhCN', '致命角斗士的绸缎长袍', '', 15050),
 	(41920, 'zhTW', '致命鬥士緞質長袍', '', 15050),
 	(41921, 'deDE', 'Satinrobe des wütenden Gladiators', '', 15050),
@@ -260050,9 +260051,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(43349, 'esMX', 'Tabardo de fuerza bruta', '', 15050),
 	(43349, 'frFR', 'Tabard de la force brute', '', 15050),
 	(43349, 'koKR', '야수의 힘 휘장', '', 15050),
-	(43349, 'ruRU', 'Гербовая накидка грубой силы', '', 15050),
-	(43349, 'zhCN', '蛮力战袍', '', 15050);
+	(43349, 'ruRU', 'Гербовая накидка грубой силы', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(43349, 'zhCN', '蛮力战袍', '', 15050),
 	(43349, 'zhTW', '蠻力外袍', '', 15050),
 	(43350, 'deDE', 'Glyphe \'Tier heilen\'', '', -12340),
 	(43350, 'esES', 'Glifo de Aliviar mascota', '', -12340),
@@ -270051,9 +270052,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(44677, 'koKR', '영원한 감시자 다리갑옷', '', 15050),
 	(44677, 'ruRU', 'Ножные латы вечного наблюдателя', '', 15050),
 	(44677, 'zhCN', '永恒观察者腿铠', '', 15050),
-	(44677, 'zhTW', '永恆觀察者腿鎧', '', 15050),
-	(44678, 'deDE', 'Weinglas', '', 15050);
+	(44677, 'zhTW', '永恆觀察者腿鎧', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(44678, 'deDE', 'Weinglas', '', 15050),
 	(44678, 'esES', 'Copa de vino', '', 15050),
 	(44678, 'esMX', 'Copa de vino', '', 15050),
 	(44678, 'frFR', 'Verre de vin', '', 15050),
@@ -280052,9 +280053,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(46086, 'zhTW', '戰鬥白金碟', '', 15050),
 	(46087, 'deDE', 'Platinscheiben der Zauberei', '', 15050),
 	(46087, 'esES', 'Discos de brujería de platino', '', 15050),
-	(46087, 'esMX', 'Discos de brujería de platino', '', 15050),
-	(46087, 'frFR', 'Disques de sorcellerie en platine', '', 15050);
+	(46087, 'esMX', 'Discos de brujería de platino', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(46087, 'frFR', 'Disques de sorcellerie en platine', '', 15050),
 	(46087, 'koKR', '마법의 백금 원반', '', 15050),
 	(46087, 'ruRU', 'Платиновые диски с печатью колдовства', '', 15050),
 	(46087, 'zhCN', '白金巫术圆盘', '', 15050),
@@ -290053,9 +290054,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(47949, 'ruRU', 'Рвение Зиморожденного', '', 15050),
 	(47949, 'zhCN', '霜脉矮人的热忱', '', 15050),
 	(47949, 'zhTW', '霜誕狂熱', '', 15050),
-	(47950, 'deDE', 'Der Diplomat', '', 15050),
-	(47950, 'esES', 'La Diplomática', '', 15050);
+	(47950, 'deDE', 'Der Diplomat', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(47950, 'esES', 'La Diplomática', '', 15050),
 	(47950, 'esMX', 'La Diplomática', '', 15050),
 	(47950, 'frFR', 'Le Diplomate', '', 15050),
 	(47950, 'koKR', '외교관', '', 15050),
@@ -300054,9 +300055,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(49975, 'zhCN', '冰冠斥候护符', '', 15050),
 	(49975, 'zhTW', '骸骨哨兵護符', '', 15050),
 	(49976, 'deDE', 'Bollwerk des schwelenden Stahls', '', 15050),
-	(49976, 'esES', 'Baluarte de acero incandescente', '', 15050),
-	(49976, 'esMX', 'Baluarte de acero incandescente', '', 15050);
+	(49976, 'esES', 'Baluarte de acero incandescente', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(49976, 'esMX', 'Baluarte de acero incandescente', '', 15050),
 	(49976, 'frFR', 'Rempart d\'acier fumant', '', 15050),
 	(49976, 'koKR', '연기나는 강철의 보루 방패', '', 15050),
 	(49976, 'ruRU', 'Сила тлеющей стали', '', 15050),
@@ -310055,9 +310056,9 @@ INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `Veri
 	(51759, 'zhTW', '冰霜女巫頭盔', '', 15050),
 	(51760, 'deDE', 'Kilt der Frosthexe', '', 15050),
 	(51760, 'esES', 'Falda de bruja de Escarcha', '', 15050),
-	(51760, 'esMX', 'Falda de bruja de Escarcha', '', 15050),
-	(51760, 'frFR', 'Kilt de sorcière du givre', '', 15050);
+	(51760, 'esMX', 'Falda de bruja de Escarcha', '', 15050);
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
+	(51760, 'frFR', 'Kilt de sorcière du givre', '', 15050),
 	(51760, 'koKR', '서리술사의 킬트', '', 15050),
 	(51760, 'ruRU', 'Килт ледяной ведьмы', '', 15050),
 	(51760, 'zhCN', '霜巫褶裙', '', 15050),

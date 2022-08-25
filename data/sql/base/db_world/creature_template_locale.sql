@@ -15,11 +15,11 @@
 -- Dumpar struktur för tabell acore_world.creature_template_locale
 DROP TABLE IF EXISTS `creature_template_locale`;
 CREATE TABLE IF NOT EXISTS `creature_template_locale` (
-  `entry` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `locale` VARCHAR(4) NOT NULL,
+  `entry` mediumint unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) NOT NULL,
   `Name` text,
   `Title` text,
-  `VerifiedBuild` SMALLINT DEFAULT 0,
+  `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 

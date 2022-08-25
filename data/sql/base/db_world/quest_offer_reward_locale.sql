@@ -15,14 +15,14 @@
 -- Dumpar struktur för tabell acore_world.quest_offer_reward_locale
 DROP TABLE IF EXISTS `quest_offer_reward_locale`;
 CREATE TABLE IF NOT EXISTS `quest_offer_reward_locale` (
-  `ID` INT unsigned NOT NULL DEFAULT 0,
-  `locale` VARCHAR(4) NOT NULL,
+  `ID` int unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) NOT NULL,
   `RewardText` text,
-  `VerifiedBuild` SMALLINT NOT NULL DEFAULT 0,
+  `VerifiedBuild` smallint NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumpar data för tabell acore_world.quest_offer_reward_locale: ~47 918 rows (ungefär)
+-- Dumpar data för tabell acore_world.quest_offer_reward_locale: ~46 592 rows (ungefär)
 DELETE FROM `quest_offer_reward_locale`;
 /*!40000 ALTER TABLE `quest_offer_reward_locale` DISABLE KEYS */;
 INSERT INTO `quest_offer_reward_locale` (`ID`, `locale`, `RewardText`, `VerifiedBuild`) VALUES

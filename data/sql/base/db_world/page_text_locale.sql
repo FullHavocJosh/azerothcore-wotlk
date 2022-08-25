@@ -15,14 +15,14 @@
 -- Dumpar struktur för tabell acore_world.page_text_locale
 DROP TABLE IF EXISTS `page_text_locale`;
 CREATE TABLE IF NOT EXISTS `page_text_locale` (
-  `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `locale` VARCHAR(4) NOT NULL,
+  `ID` mediumint unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) NOT NULL,
   `Text` text,
-  `VerifiedBuild` SMALLINT DEFAULT 0,
+  `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumpar data för tabell acore_world.page_text_locale: ~10 388 rows (ungefär)
+-- Dumpar data för tabell acore_world.page_text_locale: ~11 053 rows (ungefär)
 DELETE FROM `page_text_locale`;
 /*!40000 ALTER TABLE `page_text_locale` DISABLE KEYS */;
 INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
@@ -6614,7 +6614,7 @@ INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(2461, 'deDE', 'Lok-Tar, $GBruder:Schwester;. Die Elemente rufen Euch und bitten mich, Euch den Weg des Schamanen zu zeigen. Die Geister unserer Vorfahren sehen vom Jenseits aus zu und sind von Stolz erfüllt in dem Wissen, dass Ihr unseren Reihen beigetreten seid.$B$BWenn Ihr bereit seid, findet Ihr mich nahe dem Eingang des Höhlenbaus. Dort unterweise ich auch andere Eurer Art. Mögt Ihr bis dahin stets Rückenwind haben.$B$B- Shikrik, Schamanenlehrerin', 0),
 	(2461, 'esES', 'Lok-tar, $Ghermano:hermana;. Los elementos te han traído hasta aquí y me han encargado que te muestre el camino del chamán. Los espíritus de nuestros ancestros nos vigilan desde el más allá y están henchidos de orgullo, sabiendo que te has unido a nuestras filas.$B$BCuando estés $Gpreparado:preparada;, búscame cerca de El Cubil. Allí es donde instruyo a otros individuos de nuestra clase. Hasta entonces, que tengas vientos favorables.$B$BShikrik, instructora de chamanes', 0),
 	(2461, 'esMX', 'Lok-tar, $Ghermano:hermana;. Los elementos te han traído hasta aquí y me han encargado que te muestre el camino del chamán. Los espíritus de nuestros ancestros nos vigilan desde el más allá y están henchidos de orgullo, sabiendo que te has unido a nuestras filas.$B$BCuando estés $Gpreparado:preparada;, búscame cerca de El Cubil. Allí es donde instruyo a otros individuos de nuestra clase. Hasta entonces, que tengas vientos favorables.$B$BShikrik, instructora de chamanes', 0),
-	(2461, 'frFR', 'Lok-tar, $gfrère:sœur;', 0),
+	(2461, 'frFR', 'Lok-tar, $gfrère:sœur;. Les éléments annoncent votre venue et me demandent de vous guider sur la voie du chaman. Les esprits de nos ancêtres observent depuis l\'au-delà et tremblent de fierté à l\'idée que vous ayez rejoint nos rangs.$B$BQuand vous le jugerez bon, venez me voir à l\'entrée de l\'Antre. C\'est là que je forme les nôtres. Jusque là, que les vents vous soient favorables.$B$BShikrik, Maître des chamans', 0),
 	(2461, 'ruRU', 'Лок-тар, $gбрат:сестра;. Стихии указали на тебя и поручили мне показать тебе путь шамана. Духи наших предков смотрят на нас и гордятся тем, что ты $gвступил:вступила; в наши ряды.\r\n\r\nКогда будешь $gготов:готова;, найди меня у входа в Логово. Я обучаю там наших собратьев. Да будет тебе попутный ветер.\r\n\r\n-Шикрик, наставница шаманов', 0),
 	(2461, 'zhCN', '你好，我的$g兄弟:姐妹。元素们告诉我你正在向这里旅行，它们要我向你展示萨满之道。我们先祖的灵魂在地下看着我们，并对你加入萨满的行列感到非常欣慰。$B$B当你准备好了之后，就到大兽穴的入口处来找我吧。我在这里负责训练萨满。希望你一路顺风。$B$B——史克里克，萨满训练师', 0),
 	(2462, 'deDE', 'Seid gegrüßt, $GBruda:Schwesta;. Geister sagen, Ihr sein bereit, unseren Verbündeten zu helfen. Ihr haben enge Bindungen an die Elemente und Ihr sein viel mehr mächtig als Ihr wart, wenn zuerst mit Unterricht bei mir angefangen.$B$BJetzt ich Euch schicken, Shikrik zu treffen, Orcschamanenlehrerin im Tal der Prüfungen. Sie bereits wissen, dass Ihr kommen, bei Ihr zu lernen. Machen unsere Vorfahren stolz. Bis wiedersehen, soll Flamme Euch halten warm und Ihr sollen haben Rückenwind.$B$B- Ishi-yo', 0),
@@ -8506,14 +8506,14 @@ INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(3036, 'esMX', 'La terrorífica y enorme boca de esa bestia se abrió, lanzando agua helada a nuestra embarcación. Aquellas terribles mandíbulas detuvieron la proa de nuestro barco, arrancándola del casco. Los marineros y el cargamento se vieron violentamente precipitados al mar a medida que los restos del barco desaparecían entre las olas.$B$BLo último que recuerdo es que estaba volando desde el casco roto, golpeándome contra las oscuras olas. El mundo se volvió oscuro y creí que ahí quedaría mi último aliento. Cuando desperté en la enfermería de Theramore, supe que alguien debía contar nuestra historia.', 0),
 	(3036, 'frFR', 'La bouche de cette immense créature s\'est ouverte, expédiant des traits d\'eau glacée vers notre embarcation. Ses terribles mâchoires se sont refermées sur la proue du bateau, l\'arrachant au reste de la coque. Équipage et cargaison furent projetés à la baille, alors que les restes du navire disparaissaient entre les vagues.\n\nLa dernière chose dont je me souviens, c\'est de mon vol plané sur la mer d\'encre et de mon plongeon sous sa surface. Le monde s\'est obscurci et je croyais ma dernière heure venue. Lorsque je me suis réveillé à l\'infirmerie de Theramore, j\'ai compris que quelqu\'un devait raconter notre histoire.', 0),
 	(3036, 'ruRU', 'Чудовище раскрыло свою пасть, окатывая нас потоками ледяной воды. Его челюсти сомкнулись и оторвали нос нашего корабля. Моряки и весь груз оказались за бортом, а остатки корабля скрылись в морской пучине.$b$bПоследнее, что я помню, – это как меня выбросило из корабля в бушующее море… В моих глазах потемнело, и я решил, что сделал свой последний вздох. Когда меня привели в чувство в лазарете Терамора, мне стало ясно, что мой долг – поведать миру эту историю.', 0),
-	(3036, 'zhCN', '这头巨兽张开血盆大口，冰冷的水柱朝我们的船只倾泻而来。它锋利的牙齿瞬间将船头撕成了碎片。船员和货物纷纷被抛到海中，船只的残骸也渐渐被海浪吞没。$B$B我只记得自己站立不稳，从破裂的船舱跌入海中后便失去了知觉。眼前的世界一片漆黑，我以为此次难逃一劫，注定要葬身鱼腹。待我苏醒后，发现自己躺在塞拉摩岛的医护室。看来，这段恐怖的经历必须得由我这个唯一的幸存者来讲述了。', 0),
+	(3036, 'zhCN', '这头巨兽张开血盆大口，冰冷的水柱朝我们的船只倾泻而来。它锋利的牙齿瞬间将船头撕成了碎片。船员和货物纷纷被抛到海中，船只的残骸也渐渐被海浪吞没。$B$B我只记得自己站立不稳，从破裂的船舱跌入海中后便失去了知觉。眼前的世界一片漆黑，我以为此次难逃一劫，注定要葬身鱼腹。待我苏醒后，发现自己躺在塞拉摩岛的医护室。看来，这段恐怖的经历必须得由我这个唯一的幸存者来讲述了。', 0);
+INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(3037, 'deDE', 'Kinder: Joel und Gina. Ehefrau: Suzannah.', 0),
 	(3037, 'esES', 'Hijos: Joel y Gina. Esposa: Suzannah', 0),
 	(3037, 'esMX', 'Hijos: Joel y Gina. Esposa: Suzannah', 0),
 	(3037, 'frFR', 'Enfants : Joel et Gina. Femme : Suzannah', 0),
 	(3037, 'ruRU', 'Дети: Джоэль и Джина. Жена: Сюзанна.', 0),
-	(3037, 'zhCN', '小孩：乔艾与吉娜。妻子：苏珊娜', 0);
-INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
+	(3037, 'zhCN', '小孩：乔艾与吉娜。妻子：苏珊娜', 0),
 	(3038, 'deDE', 'Unheil verkündende Runen wurden auf der Seite dieser Kiste eingeschnitzt…', 0),
 	(3038, 'frFR', 'Des runes inquiétantes sont gravées sur le côté de la caisse...', 0),
 	(3038, 'zhCN', '刻在箱子侧的是预言符文……', 0),
@@ -10639,9 +10639,9 @@ INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(3503, 'zhCN', '问：我不能施放火焰冲击！几秒前我明明成功地施放了火焰冲击，但是现在不行了。帮帮我。$B$B答：不能施放法术？是不是几秒前刚刚施放过？某些法术是不能连续施放两次的。在等待期间不如挑些别的法术来试试。', 0),
 	(3504, 'deDE', 'Frage: Ich habe im Umkleideraum einen Blick in das Zauberbuch meines Freundes geworfen, und er beherrscht schon viel mehr Zauber als ich! Bin ich zu schlecht?$B$BAntwort: Erst einmal sei gesagt, dass das VÖLLIG NORMAL ist. Sprecht regelmäßig mit Eurem Lehrer. Vielleicht kann er Euch einige neue Zaubersprüche beibringen. Wenn nicht, braucht Ihr wahrscheinlich einfach mehr Übung mit den Zaubern, die Ihr bereits kennt. Habt Geduld und Ihr werdet neue Zauber lernen!', 0),
 	(3504, 'esES', 'P: He echado un ojo al libro de hechizos de mi amigo en las taquillas. ¡Y ya tiene más hechizos que yo! ¿Es culpa mía?$B$BR: En primer lugar, se trata de una circunstancia COMPLETAMENTE NORMAL, no olvides charlar de vez en cuando con tu preparador, a lo mejor te enseña encantamientos nuevos. Si no, será que necesitas practica más los hechizos que ya conoces. ¡Ten paciencia, ya llegará tu momento!$B', 0),
-	(3504, 'esMX', 'P: He echado un ojo al libro de hechizos de mi amigo en las taquillas. ¡Y ya tiene más hechizos que yo! ¿Es culpa mía?$B$BR: En primer lugar, se trata de una circunstancia COMPLETAMENTE NORMAL, no olvides charlar de vez en cuando con tu preparador, a lo mejor te enseña encantamientos nuevos. Si no, será que necesitas practica más los hechizos que ya conoces. ¡Ten paciencia, ya llegará tu momento!$B', 0),
-	(3504, 'frFR', 'Q : J\'ai jeté un coup d\'oeil au grimoire d\'un copain, dans les vestiaires, et il connaît beaucoup plus de sorts que moi ! Qu\'est-ce qui cloche chez moi ?\n\nR : Tout d\'abord, c\'est tout à fait NORMAL. Parlez régulièrement à votre maître de classe. Il pourra vous apprendre régulièrement de nouveaux sorts. S\'il ne peut rien vous enseigner, c\'est que vous devez vous entraîner à utiliser les sorts que vous connaissez déjà. Soyez patient, vous connaîtrez bientôt tous les sorts nécessaires !', 0);
+	(3504, 'esMX', 'P: He echado un ojo al libro de hechizos de mi amigo en las taquillas. ¡Y ya tiene más hechizos que yo! ¿Es culpa mía?$B$BR: En primer lugar, se trata de una circunstancia COMPLETAMENTE NORMAL, no olvides charlar de vez en cuando con tu preparador, a lo mejor te enseña encantamientos nuevos. Si no, será que necesitas practica más los hechizos que ya conoces. ¡Ten paciencia, ya llegará tu momento!$B', 0);
 INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
+	(3504, 'frFR', 'Q : J\'ai jeté un coup d\'oeil au grimoire d\'un copain, dans les vestiaires, et il connaît beaucoup plus de sorts que moi ! Qu\'est-ce qui cloche chez moi ?\n\nR : Tout d\'abord, c\'est tout à fait NORMAL. Parlez régulièrement à votre maître de classe. Il pourra vous apprendre régulièrement de nouveaux sorts. S\'il ne peut rien vous enseigner, c\'est que vous devez vous entraîner à utiliser les sorts que vous connaissez déjà. Soyez patient, vous connaîtrez bientôt tous les sorts nécessaires !', 0),
 	(3504, 'ruRU', 'В: Я случайно заглянул в книгу моего товарища и увидел, что он знает гораздо больше заклинаний! Неужели я неудачник? \r\n\r\nО: Не беспокойтесь, это совершенно нормально. Не забывайте почаще заглядывать к своему наставнику – возможно, он сочтет, что вы уже готовы выучить новое заклинание. Если же нет – почаще практикуйтесь! Главное – не беспокойтесь; скоро вы догоните вашего друга.', 0),
 	(3504, 'zhCN', '问：我在衣帽间偷看了朋友的法术书，发现他掌握的法术比我多！为什么会这样？$B$B答：首先，这种情况是绝对正常的。记得经常和你的训练师谈谈。他/她或许能教你一些新的咒语。如果训练师拒绝教给你更多的知识，那么你就需要勤加练习目前已经掌握的法术。要有耐心，你一定会学到新的法术的！', 0),
 	(3505, 'deDE', 'Frage: In meiner Gruppe scheinen alle mehr Schaden zu verursachen als ich. Wie kann ich zu ihnen aufholen, ohne dabei wie ein Tölpel dazustehen?$B$BAntwort: Es geht nicht nur um Schaden. Ihr könnt Eurer Gruppe auf andere Weise helfen. Arkane Erfrischungszauber sind ein gutes Beispiel. Sollte sich das ebenfalls nicht bezahlt machen, sind die arkanen Künste vielleicht nicht der richtige Lebensweg für Euch. Man sagt zum Beispiel, Jagen sei einfach!', 0),

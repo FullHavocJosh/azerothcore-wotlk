@@ -15,20 +15,20 @@
 -- Dumpar struktur för tabell acore_world.broadcast_text
 DROP TABLE IF EXISTS `broadcast_text`;
 CREATE TABLE IF NOT EXISTS `broadcast_text` (
-  `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `LanguageID` MEDIUMINT DEFAULT NULL,
+  `ID` mediumint unsigned NOT NULL DEFAULT '0',
+  `LanguageID` mediumint DEFAULT NULL,
   `MaleText` longtext,
   `FemaleText` longtext,
-  `EmoteID1` MEDIUMINT DEFAULT NULL,
-  `EmoteID2` MEDIUMINT DEFAULT NULL,
-  `EmoteID3` MEDIUMINT DEFAULT NULL,
-  `EmoteDelay1` MEDIUMINT DEFAULT NULL,
-  `EmoteDelay2` MEDIUMINT DEFAULT NULL,
-  `EmoteDelay3` MEDIUMINT DEFAULT NULL,
-  `SoundEntriesId` MEDIUMINT DEFAULT NULL,
-  `EmotesID` MEDIUMINT DEFAULT NULL,
-  `Flags` MEDIUMINT DEFAULT NULL,
-  `VerifiedBuild` SMALLINT DEFAULT 0,
+  `EmoteID1` mediumint DEFAULT NULL,
+  `EmoteID2` mediumint DEFAULT NULL,
+  `EmoteID3` mediumint DEFAULT NULL,
+  `EmoteDelay1` mediumint DEFAULT NULL,
+  `EmoteDelay2` mediumint DEFAULT NULL,
+  `EmoteDelay3` mediumint DEFAULT NULL,
+  `SoundEntriesId` mediumint DEFAULT NULL,
+  `EmotesID` mediumint DEFAULT NULL,
+  `Flags` mediumint DEFAULT NULL,
+  `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 

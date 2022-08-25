@@ -15,15 +15,15 @@
 -- Dumpar struktur för tabell acore_world.gameobject_template_locale
 DROP TABLE IF EXISTS `gameobject_template_locale`;
 CREATE TABLE IF NOT EXISTS `gameobject_template_locale` (
-  `entry` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `locale` VARCHAR(4) NOT NULL,
+  `entry` mediumint unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) NOT NULL,
   `name` text,
   `castBarCaption` text,
-  `VerifiedBuild` SMALLINT DEFAULT 0,
+  `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Dumpar data för tabell acore_world.gameobject_template_locale: 159 822 rows
+-- Dumpar data för tabell acore_world.gameobject_template_locale: 159 831 rows
 DELETE FROM `gameobject_template_locale`;
 /*!40000 ALTER TABLE `gameobject_template_locale` DISABLE KEYS */;
 INSERT INTO `gameobject_template_locale` (`entry`, `locale`, `name`, `castBarCaption`, `VerifiedBuild`) VALUES
@@ -159863,7 +159863,16 @@ INSERT INTO `gameobject_template_locale` (`entry`, `locale`, `name`, `castBarCap
 	(174968, 'zhCN', '木椅', '', 0),
 	(176361, 'zhCN', '天灾之锅', '收集中', 0),
 	(176393, 'zhCN', '天灾之锅', '收集中', 0),
-	(177289, 'zhCN', '天灾之锅', '收集中', 0);
+	(177289, 'zhCN', '天灾之锅', '收集中', 0),
+	(175226, 'zhCN', '搁浅的海洋生物', '', 0),
+	(175230, 'zhCN', '搁浅的海洋生物', '', 0),
+	(175233, 'zhCN', '搁浅的海洋生物', '', 0),
+	(176191, 'zhCN', '搁浅的海龟', '', 0),
+	(176197, 'zhCN', '搁浅的海龟', '', 0),
+	(176198, 'zhCN', '搁浅的海龟', '', 0),
+	(184084, 'zhCN', '开往秘蓝岛的船只', '', 18019),
+	(176365, 'zhCN', '开往泰达希尔的船只', '', 18019),
+	(176364, 'zhCN', '开往暴风城的船只', '', 18019);
 /*!40000 ALTER TABLE `gameobject_template_locale` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

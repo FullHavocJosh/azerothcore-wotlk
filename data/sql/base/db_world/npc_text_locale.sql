@@ -15,8 +15,8 @@
 -- Dumpar struktur för tabell acore_world.npc_text_locale
 DROP TABLE IF EXISTS `npc_text_locale`;
 CREATE TABLE IF NOT EXISTS `npc_text_locale` (
-  `ID` MEDIUMINT unsigned NOT NULL DEFAULT 0,
-  `Locale` VARCHAR(4) NOT NULL,
+  `ID` mediumint unsigned NOT NULL DEFAULT '0',
+  `Locale` varchar(4) NOT NULL,
   `Text0_0` longtext,
   `Text0_1` longtext,
   `Text1_0` longtext,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `npc_text_locale` (
   PRIMARY KEY (`ID`,`Locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Dumpar data för tabell acore_world.npc_text_locale: ~22 865 rows (ungefär)
+-- Dumpar data för tabell acore_world.npc_text_locale: ~22 012 rows (ungefär)
 DELETE FROM `npc_text_locale`;
 /*!40000 ALTER TABLE `npc_text_locale` DISABLE KEYS */;
 INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, `Text1_1`, `Text2_0`, `Text2_1`, `Text3_0`, `Text3_1`, `Text4_0`, `Text4_1`, `Text5_0`, `Text5_1`, `Text6_0`, `Text6_1`, `Text7_0`, `Text7_1`) VALUES
@@ -15437,11 +15437,11 @@ INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, 
 	(13318, 'deDE', 'Der Mooswandler sieht schwer verwundet aus.', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 	(13318, 'frFR', 'Le marchemousse a l\'air gravement blessé.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(13318, 'zhCN', '这个苔行者看起来伤得很重。', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(13321, 'deDE', '', 'Von diesem Dock aus fährt die Bravado zwischen Sturmwind und Auberdine hin und her.', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+	(13321, 'deDE', '', 'Von diesem Dock aus fährt die Bravado zwischen Sturmwind und Auberdine hin und her.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(13321, 'esES', '', 'Desde este muelle, El Valentía hace el viaje de ida y vuelta entre Ventormenta y Auberdine.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(13321, 'esMX', '', 'Desde este muelle, El Valentía hace el viaje de ida y vuelta entre Ventormenta y Auberdine.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(13321, 'frFR', NULL, 'Depuis ce quai, la Bravoure fait l\'aller-retour entre Hurlevent et Auberdine.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(13321, 'zhCN', '从这个港口，勇气号往返暴风城与鲁瑟兰村两地。', '从这个港口，勇气号往返暴风城与鲁瑟兰村两地。', '从这个港口，勇气号往返暴风城与奥伯丁两地。', '从这个港口，勇气号往返暴风城与奥伯丁两地。', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(13321, 'frFR', '', 'Depuis ce quai, la Bravoure fait l\'aller-retour entre Hurlevent et Auberdine.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(13321, 'zhCN', '', '从这个码头，勇敢者号在暴风城和奥伯丁之间往返', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(13322, 'deDE', 'Meine arme Flugmaschine. Sie hat den Absturz nicht überlebt und ohne Ersatzteile kriege ich sie nie wieder zum Laufen!', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 	(13322, 'frFR', 'Ma pauvre machine volante. Elle n\'a pas survécu à l\'accident et, si je ne trouve pas de pièces de rechange, je ne réussirai jamais à la refaire marcher !', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(13322, 'zhCN', '我可怜的飞行器。她没能撑过这场坠机，又没有额外的零件。我永远没办法修好她让她运转了!', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
