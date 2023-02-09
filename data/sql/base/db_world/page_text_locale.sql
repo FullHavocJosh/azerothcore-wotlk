@@ -1,30 +1,31 @@
 -- --------------------------------------------------------
--- Värd:                         127.0.0.1
--- Serverversion:                8.0.28 - MySQL Community Server - GPL
--- Server-OS:                    Win64
--- HeidiSQL Version:             11.3.0.6295
+-- Host:                         127.0.0.1
+-- Server version:               8.0.29 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumpar struktur för tabell acore_world.page_text_locale
+-- Dumping structure for table acore_world.page_text_locale
 DROP TABLE IF EXISTS `page_text_locale`;
 CREATE TABLE IF NOT EXISTS `page_text_locale` (
   `ID` mediumint unsigned NOT NULL DEFAULT '0',
   `locale` varchar(4) NOT NULL,
   `Text` text,
-  `VerifiedBuild` smallint DEFAULT '0',
+  `VerifiedBuild` mediumint DEFAULT NULL,
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumpar data för tabell acore_world.page_text_locale: ~11 053 rows (ungefär)
+-- Dumping data for table acore_world.page_text_locale: ~11,053 rows (approximately)
 DELETE FROM `page_text_locale`;
-/*!40000 ALTER TABLE `page_text_locale` DISABLE KEYS */;
 INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(15, 'deDE', 'Mein lieber Morgan,$B$Bdie Geschäfte hier in Goldhain gehen gut - so gut, dass ich bislang noch nicht einmal dazugekommen bin, dir eine Lieferung zu schicken!$B$BDie Person, die dir diese Notiz übergibt, hat gleichzeitig auch den Auftrag von mir, dir ein großes Paket Wachskerzen zu übergeben - du weißt schon, diese Dinger, wie sie Kobolde gern auf dem Kopf tragen.$B$BBitte zeig dich dankbar und entlohn die Person angemessen.', 0),
 	(15, 'esES', 'Hola, Morgan,$B$BLos negocios en Villadorada van muy bien, tan bien que no he tenido tiempo de hacerte ningún envío.$B$BHe encargado al portador de esta nota que entregue un paquete de velas de cera grandes (sabes a cuáles me refiero, ¿no?, las que los kóbolds suelen llevar en sus cabezas).$B$BTe ruego que se lo agradezcas a esta persona de nuestra parte y le pagues lo que sea justo.', 0),
@@ -11084,8 +11085,8 @@ INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(3622, 'frFR', 'Balançant sa queue et ondulant des hanches, la silhouette aux formes généreuses traversa le lac d’un air décidé en direction de l’homme assis sur le rivage. Il se leva d’un bond à son approche, visiblement heureux de sa présence. Des bras bleus se drapèrent autour de ses épaules tandis qu’une queue douce s’enroula langoureusement autour de sa taille. « Pourquoi dois-je voyager si loin pour rencontrer un homme comme toi ? » Sa voix était marquée d’un fort et séduisant accent.$b$bUn large sourire sur son visage, il la repoussa délicatement, les yeux braqués sur elle tandis que la lumière révélait ses traits.$b$b« Regarde-moi dans les yeux ! », s’exclama-t-elle, feignant d’être en colère.$b$bIl haussa les épaules et se pencha vers son sac pour en sortir une petite bourse. « Ma sublime Soola, je t’ai apporté quelque chose. » Il affichait une confiance en lui en acier trempé.', 0),
 	(3622, 'ruRU', 'Обворожительная девушка перешла озеро и, помахивая хвостом, плывущей походкой направилась к мужчине, отдыхающему на берегу. При ее появлении он поднялся, его лицо озарилось светом счастья. Голубые руки скользнули по его плечам, а гладкий хвост недвусмысленно обвился вокруг пояса. "Объяснишь, ради чего мне пришлось искать тебя... " В ее речи слышался резкий, но вместе с тем очаровательный акцент.$b$bШироко улыбаясь, он мягко отстранил ее от себя, откровенно любуясь ее чертами в лучах солнца.$b$b"...в этой глуши?" – закончила она гневно, но при этом лукавые огоньки заиграли в ее глазах.$b$bОбезоруживающе пожав плечами, он потянулся к сумке и достал оттуда небольшой мешочек. "Моя прекрасная Соола, я хочу подарить тебе одну вещь," – его слова прозвучали твердо и уверенно.', 0),
 	(3622, 'zhCN', '需要大芒果文本', 12340);
-/*!40000 ALTER TABLE `page_text_locale` ENABLE KEYS */;
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

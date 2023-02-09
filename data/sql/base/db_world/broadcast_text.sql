@@ -1,18 +1,20 @@
 -- --------------------------------------------------------
--- Värd:                         127.0.0.1
--- Serverversion:                8.0.28 - MySQL Community Server - GPL
--- Server-OS:                    Win64
--- HeidiSQL Version:             11.3.0.6295
+-- Host:                         127.0.0.1
+-- Server version:               8.0.29 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumpar struktur för tabell acore_world.broadcast_text
+-- Dumping structure for table acore_world.broadcast_text
 DROP TABLE IF EXISTS `broadcast_text`;
 CREATE TABLE IF NOT EXISTS `broadcast_text` (
   `ID` mediumint unsigned NOT NULL DEFAULT '0',
@@ -32,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `broadcast_text` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Dumpar data för tabell acore_world.broadcast_text: 73 039 rows
+-- Dumping data for table acore_world.broadcast_text: 73,039 rows
 DELETE FROM `broadcast_text`;
 /*!40000 ALTER TABLE `broadcast_text` DISABLE KEYS */;
 INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `EmoteID1`, `EmoteID2`, `EmoteID3`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `SoundEntriesId`, `EmotesID`, `Flags`, `VerifiedBuild`) VALUES
@@ -73088,6 +73090,7 @@ INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `Emo
 	(77865, 0, '|TInterface\\Icons\\achievement_arena_2v2_5:20|t$n has agreed to begin the encounter. Additional players required to begin: $8589w.', '', 0, 0, 0, 0, 0, 0, 0, 0, 1, 18019);
 /*!40000 ALTER TABLE `broadcast_text` ENABLE KEYS */;
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

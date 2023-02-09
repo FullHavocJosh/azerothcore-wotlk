@@ -1,29 +1,31 @@
 -- --------------------------------------------------------
--- Värd:                         127.0.0.1
--- Serverversion:                8.0.28 - MySQL Community Server - GPL
--- Server-OS:                    Win64
--- HeidiSQL Version:             11.3.0.6295
+-- Host:                         127.0.0.1
+-- Server version:               8.0.29 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumpar struktur för tabell acore_world.creature_template_locale
+-- Dumping structure for table acore_world.creature_template_locale
 DROP TABLE IF EXISTS `creature_template_locale`;
 CREATE TABLE IF NOT EXISTS `creature_template_locale` (
   `entry` mediumint unsigned NOT NULL DEFAULT '0',
   `locale` varchar(4) NOT NULL,
   `Name` text,
   `Title` text,
-  `VerifiedBuild` smallint DEFAULT '0',
+  `VerifiedBuild` mediumint DEFAULT NULL,
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
--- Dumpar data för tabell acore_world.creature_template_locale: 218 054 rows
+-- Dumping data for table acore_world.creature_template_locale: 218,054 rows
 DELETE FROM `creature_template_locale`;
 /*!40000 ALTER TABLE `creature_template_locale` DISABLE KEYS */;
 INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`) VALUES
@@ -19022,14 +19024,14 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `Ver
 	(2807, 'ruRU', 'Волногон из клана Пронзающего Гребня', '', 18019),
 	(2807, 'zhCN', '刺脊招潮者', '', 18019),
 	(2807, 'zhTW', '刺脊招潮者', '', 18019),
-	(2808, 'deDE', 'Vikki Lonsav', 'Gastwirtin', 18019),
-	(2808, 'esES', 'Vikki Lonsav', 'Tabernera', 18019),
-	(2808, 'esMX', 'Vikki Lonsav', 'Tabernera', 18019),
-	(2808, 'frFR', 'Vikki Lonsav', 'Aubergiste', 18019),
-	(2808, 'koKR', '비키 론사브', '여관주인', 18019),
-	(2808, 'ruRU', 'Викки Лонсав', 'Хозяйка таверны', 18019),
-	(2808, 'zhCN', '维基·隆萨夫', '旅店老板', 18019),
-	(2808, 'zhTW', '維琪·隆薩夫', '旅店老闆', 18019),
+	(2808, 'deDE', 'Vikki Lonsav', 'Gemischtwaren', 18019),
+	(2808, 'esES', 'Vikki Lonsav', 'Suministros generales', 18019),
+	(2808, 'esMX', 'Vikki Lonsav', 'Suministros generales', 18019),
+	(2808, 'frFR', 'Vikki Lonsav', 'Fournitures générales', 18019),
+	(2808, 'koKR', '비키 론사브', '일용품 상인', 18019),
+	(2808, 'ruRU', 'Викки Лонсав', 'Сто мелочей', 18019),
+	(2808, 'zhCN', '维基·隆萨夫', '杂货供应商', 18019),
+	(2808, 'zhTW', '維琪·隆薩夫', '雜貨供應商', 18019),
 	(2809, 'deDE', 'Eber', '', 18019),
 	(2809, 'esES', 'Jabalí', '', 18019),
 	(2809, 'esMX', 'Jabalí', '', 18019),
@@ -25476,13 +25478,13 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `Ver
 	(3663, 'zhCN', '净化者德尔格伦', '', 18019),
 	(3663, 'zhTW', '『淨化者』德爾葛蘭', '', 18019),
 	(3664, 'deDE', 'Ilkrud Magskluve', '', 18019),
-	(3664, 'esES', '[UNUSED]Ilkrud Magthrull', '', 18019),
-	(3664, 'esMX', '[UNUSED]Ilkrud Magthrull', '', 18019),
-	(3664, 'frFR', '[INUTILISÉ] Ilkrud Magthrull', '', 18019),
-	(3664, 'koKR', '[미사용]일크루드 마그스룰', '', 18019),
+	(3664, 'esES', 'Ilkrud Magthrull', '', 18019),
+	(3664, 'esMX', 'Ilkrud Magthrull', '', 18019),
+	(3664, 'frFR', 'Ilkrud Magthrull', '', 18019),
+	(3664, 'koKR', '일크루드 마그스룰', '', 18019),
 	(3664, 'ruRU', 'Илкруд Магтрулл', '', 18019),
 	(3664, 'zhCN', '伊克鲁德·玛格苏尔', '', 18019),
-	(3664, 'zhTW', '[UNUSED]伊克魯德·瑪格蘇爾', '', 18019),
+	(3664, 'zhTW', '伊克魯德·瑪格蘇爾', '', 18019),
 	(3665, 'deDE', 'Kranführer Moppelfuzz', '', 18019),
 	(3665, 'esES', 'Operador de grúa Pelardo', '', 18019),
 	(3665, 'esMX', 'Operador de grúa Pelardo', '', 18019),
@@ -218104,6 +218106,7 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `Ver
 	(36795, 'zhCN', '天灾领主泰兰努斯', '', 18019);
 /*!40000 ALTER TABLE `creature_template_locale` ENABLE KEYS */;
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
