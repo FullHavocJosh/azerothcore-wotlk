@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `quest_offer_reward_locale` (
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumping data for table acore_world.quest_offer_reward_locale: ~49,414 rows (approximately)
+-- Dumping data for table acore_world.quest_offer_reward_locale: ~50,987 rows (approximately)
 DELETE FROM `quest_offer_reward_locale`;
 INSERT INTO `quest_offer_reward_locale` (`ID`, `locale`, `RewardText`, `VerifiedBuild`) VALUES
 	(1, 'frFR', 'Parlez à Kanrethad pour que vos talents, votre arme et votre monture vous soient rendus.', 18019),

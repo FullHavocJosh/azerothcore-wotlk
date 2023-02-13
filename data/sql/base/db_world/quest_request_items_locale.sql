@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `quest_request_items_locale` (
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumping data for table acore_world.quest_request_items_locale: ~42,027 rows (approximately)
+-- Dumping data for table acore_world.quest_request_items_locale: ~38,918 rows (approximately)
 DELETE FROM `quest_request_items_locale`;
 INSERT INTO `quest_request_items_locale` (`ID`, `locale`, `CompletionText`, `VerifiedBuild`) VALUES
 	(1, 'frFR', NULL, 18019),

@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `item_template_locale` (
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
--- Dumping data for table acore_world.item_template_locale: ~313,250 rows (approximately)
+-- Dumping data for table acore_world.item_template_locale: ~307,546 rows (approximately)
 DELETE FROM `item_template_locale`;
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
 	(17, 'deDE', 'Martinsfuror', '', 15050),
