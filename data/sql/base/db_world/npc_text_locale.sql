@@ -17,28 +17,28 @@
 -- Dumping structure for table acore_world.npc_text_locale
 DROP TABLE IF EXISTS `npc_text_locale`;
 CREATE TABLE IF NOT EXISTS `npc_text_locale` (
-  `ID` mediumint unsigned NOT NULL DEFAULT '0',
-  `Locale` varchar(4) NOT NULL,
-  `Text0_0` longtext,
-  `Text0_1` longtext,
-  `Text1_0` longtext,
-  `Text1_1` longtext,
-  `Text2_0` longtext,
-  `Text2_1` longtext,
-  `Text3_0` longtext,
-  `Text3_1` longtext,
-  `Text4_0` longtext,
-  `Text4_1` longtext,
-  `Text5_0` longtext,
-  `Text5_1` longtext,
-  `Text6_0` longtext,
-  `Text6_1` longtext,
-  `Text7_0` longtext,
-  `Text7_1` longtext,
+  `ID` int unsigned NOT NULL DEFAULT '0',
+  `Locale` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Text0_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text0_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text1_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text1_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text2_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text2_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text3_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text3_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text4_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text4_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text5_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text5_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text6_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text6_1` longtext COLLATE utf8mb4_unicode_ci,
+  `Text7_0` longtext COLLATE utf8mb4_unicode_ci,
+  `Text7_1` longtext COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`ID`,`Locale`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.npc_text_locale: ~21,752 rows (approximately)
+-- Dumping data for table acore_world.npc_text_locale: ~21,984 rows (approximately)
 DELETE FROM `npc_text_locale`;
 INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, `Text1_1`, `Text2_0`, `Text2_1`, `Text3_0`, `Text3_1`, `Text4_0`, `Text4_1`, `Text5_0`, `Text5_1`, `Text6_0`, `Text6_1`, `Text7_0`, `Text7_1`) VALUES
 	(1, 'deDE', '', 'Seid gegrüßt, $N', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),

@@ -17,15 +17,15 @@
 -- Dumping structure for table acore_world.item_template_locale
 DROP TABLE IF EXISTS `item_template_locale`;
 CREATE TABLE IF NOT EXISTS `item_template_locale` (
-  `ID` mediumint unsigned NOT NULL DEFAULT '0',
-  `locale` varchar(4) NOT NULL,
-  `Name` text,
-  `Description` text,
-  `VerifiedBuild` mediumint DEFAULT NULL,
+  `ID` int unsigned NOT NULL DEFAULT '0',
+  `locale` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci,
+  `Description` text COLLATE utf8mb4_unicode_ci,
+  `VerifiedBuild` int DEFAULT NULL,
   PRIMARY KEY (`ID`,`locale`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.item_template_locale: ~307,546 rows (approximately)
+-- Dumping data for table acore_world.item_template_locale: ~311,699 rows (approximately)
 DELETE FROM `item_template_locale`;
 INSERT INTO `item_template_locale` (`ID`, `locale`, `Name`, `Description`, `VerifiedBuild`) VALUES
 	(17, 'deDE', 'Martinsfuror', '', 15050),

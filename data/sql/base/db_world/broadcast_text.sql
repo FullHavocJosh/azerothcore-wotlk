@@ -17,26 +17,25 @@
 -- Dumping structure for table acore_world.broadcast_text
 DROP TABLE IF EXISTS `broadcast_text`;
 CREATE TABLE IF NOT EXISTS `broadcast_text` (
-  `ID` mediumint unsigned NOT NULL DEFAULT '0',
-  `LanguageID` mediumint DEFAULT NULL,
-  `MaleText` longtext,
-  `FemaleText` longtext,
-  `EmoteID1` mediumint DEFAULT NULL,
-  `EmoteID2` mediumint DEFAULT NULL,
-  `EmoteID3` mediumint DEFAULT NULL,
-  `EmoteDelay1` mediumint DEFAULT NULL,
-  `EmoteDelay2` mediumint DEFAULT NULL,
-  `EmoteDelay3` mediumint DEFAULT NULL,
-  `SoundEntriesId` mediumint DEFAULT NULL,
-  `EmotesID` mediumint DEFAULT NULL,
-  `Flags` mediumint DEFAULT NULL,
+  `ID` int unsigned NOT NULL DEFAULT '0',
+  `LanguageID` int DEFAULT NULL,
+  `MaleText` longtext COLLATE utf8mb4_unicode_ci,
+  `FemaleText` longtext COLLATE utf8mb4_unicode_ci,
+  `EmoteID1` int DEFAULT NULL,
+  `EmoteID2` int DEFAULT NULL,
+  `EmoteID3` int DEFAULT NULL,
+  `EmoteDelay1` int DEFAULT NULL,
+  `EmoteDelay2` int DEFAULT NULL,
+  `EmoteDelay3` int DEFAULT NULL,
+  `SoundEntriesId` int DEFAULT NULL,
+  `EmotesID` int DEFAULT NULL,
+  `Flags` int DEFAULT NULL,
   `VerifiedBuild` smallint DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.broadcast_text: 73,039 rows
+-- Dumping data for table acore_world.broadcast_text: ~72,874 rows (approximately)
 DELETE FROM `broadcast_text`;
-/*!40000 ALTER TABLE `broadcast_text` DISABLE KEYS */;
 INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `EmoteID1`, `EmoteID2`, `EmoteID3`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `SoundEntriesId`, `EmotesID`, `Flags`, `VerifiedBuild`) VALUES
 	(1, 0, 'Help help!  I\'m being repressed!', '', 0, 0, 0, 0, 0, 0, 0, 0, 6, 18019),
 	(3, 0, 'Company.. HALT!  ... Fall IN!', '', 0, 0, 0, 0, 0, 0, 0, 0, 1, 18019),
@@ -73088,7 +73087,6 @@ INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `Emo
 	(77369, 0, '|TInterface\\Icons\\inv_misc_bomb_05:20|tYou have |cFFFF0000|Hspell:145996|h[Set to Blow]|h|r! Use |cFFFF0000|Hspell:146364|h[Throw Bomb]|h|r to throw them!', '', 0, 0, 0, 0, 0, 0, 0, 0, 1, 18019),
 	(77371, 0, 'Dat\'s de end of Hellscream.$b$b<Vol\'jin eyes you warily.>$b$bWhat next, $r?', '', 274, 0, 0, 0, 0, 0, 0, 0, 0, 18019),
 	(77865, 0, '|TInterface\\Icons\\achievement_arena_2v2_5:20|t$n has agreed to begin the encounter. Additional players required to begin: $8589w.', '', 0, 0, 0, 0, 0, 0, 0, 0, 1, 18019);
-/*!40000 ALTER TABLE `broadcast_text` ENABLE KEYS */;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
