@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `npc_text_locale` (
   PRIMARY KEY (`ID`,`Locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.npc_text_locale: ~20 548 rows (approximately)
+-- Dumping data for table acore_world.npc_text_locale: ~22 644 rows (approximately)
 DELETE FROM `npc_text_locale`;
 INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, `Text1_1`, `Text2_0`, `Text2_1`, `Text3_0`, `Text3_1`, `Text4_0`, `Text4_1`, `Text5_0`, `Text5_1`, `Text6_0`, `Text6_1`, `Text7_0`, `Text7_1`) VALUES
 	(1, 'deDE', '', 'Seid gegrüßt, $N', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
@@ -22016,6 +22016,7 @@ INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`, `Text0_1`, `Text1_0`, 
 	(50001, 'frFR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(50016, 'esES', 'Hola, $C. Normalmente estaría al ritmo de cuidar de la gente de Ventormenta, pero muchos de los guardias están luchando en otras tierras. Así que estoy aquí, supliendo y ofreciendo recompensas cuando preferiría estar patrullando...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(50016, 'esMX', 'Hola, $C. Normalmente estaría al ritmo de cuidar de la gente de Ventormenta, pero muchos de los guardias están luchando en otras tierras. Así que estoy aquí, supliendo y ofreciendo recompensas cuando preferiría estar patrullando...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(50016, 'frFR', 'Bien le bonjour, $c. Je devrais être à la recherche des gens de Hurlevent, mais bon nombre de gardes de Hurlevent combattent sur d\'autres terres. Me voilà donc nommé adjoint et proposant des primes alors que je devrais être de patrouille...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(50017, 'esES', 'Hola amigo. Mi nombre es Remy.$BSoy de Crestagrana, hacia el este, y vine aquí buscando negocios, buscando negocios. Tienes algo... ¿¿algo??', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(50017, 'esMX', 'Hola amigo. Mi nombre es Remy.$BSoy de Crestagrana, hacia el este, y vine aquí buscando negocios, buscando negocios. Tienes algo... ¿¿algo??', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(50022, 'esES', '¡Saludos, $c! Un día perfecto para ir a cazar, ¿no te parece? He estado teniendo bastante suerte con los jabalíes. ¿Te gustaría intentarlo?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),

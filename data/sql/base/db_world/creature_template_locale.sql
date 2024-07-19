@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `creature_template_locale` (
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.creature_template_locale: ~214 498 rows (approximately)
+-- Dumping data for table acore_world.creature_template_locale: ~221 273 rows (approximately)
 DELETE FROM `creature_template_locale`;
 INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`) VALUES
 	(1, 'deDE', 'Wegpunkt (Nur für GMs sichtbar)', 'Visual', 18019),

@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `page_text_locale` (
   PRIMARY KEY (`ID`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.page_text_locale: ~10 089 rows (approximately)
+-- Dumping data for table acore_world.page_text_locale: ~10 816 rows (approximately)
 DELETE FROM `page_text_locale`;
 INSERT INTO `page_text_locale` (`ID`, `locale`, `Text`, `VerifiedBuild`) VALUES
 	(15, 'deDE', 'Mein lieber Morgan,$B$Bdie Geschäfte hier in Goldhain gehen gut - so gut, dass ich bislang noch nicht einmal dazugekommen bin, dir eine Lieferung zu schicken!$B$BDie Person, die dir diese Notiz übergibt, hat gleichzeitig auch den Auftrag von mir, dir ein großes Paket Wachskerzen zu übergeben - du weißt schon, diese Dinger, wie sie Kobolde gern auf dem Kopf tragen.$B$BBitte zeig dich dankbar und entlohn die Person angemessen.', 0),

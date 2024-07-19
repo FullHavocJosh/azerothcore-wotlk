@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `gameobject_template_locale` (
   PRIMARY KEY (`entry`,`locale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.gameobject_template_locale: ~164 080 rows (approximately)
+-- Dumping data for table acore_world.gameobject_template_locale: ~159 945 rows (approximately)
 DELETE FROM `gameobject_template_locale`;
 INSERT INTO `gameobject_template_locale` (`entry`, `locale`, `name`, `castBarCaption`, `VerifiedBuild`) VALUES
 	(1, 'deDE', 'Stacheleber Wasserloch', '', 18019),

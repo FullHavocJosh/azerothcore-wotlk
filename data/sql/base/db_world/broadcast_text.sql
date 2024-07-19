@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `broadcast_text` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table acore_world.broadcast_text: ~69 898 rows (approximately)
+-- Dumping data for table acore_world.broadcast_text: ~70 382 rows (approximately)
 DELETE FROM `broadcast_text`;
 INSERT INTO `broadcast_text` (`ID`, `LanguageID`, `MaleText`, `FemaleText`, `EmoteID1`, `EmoteID2`, `EmoteID3`, `EmoteDelay1`, `EmoteDelay2`, `EmoteDelay3`, `SoundEntriesId`, `EmotesID`, `Flags`, `VerifiedBuild`) VALUES
 	(1, 0, 'Help help!  I\'m being repressed!', '', 0, 0, 0, 0, 0, 0, 0, 0, 6, 18019),
