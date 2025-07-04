@@ -24,7 +24,7 @@ runs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: acore/ac-wotlk-${{ inputs.component-name }}
+        images: fullhavocjosh/ac-wotlk-${{ inputs.component-name }}
         tags: |
           type=raw,value=${{ inputs.version }}
           type=ref,event=branch
