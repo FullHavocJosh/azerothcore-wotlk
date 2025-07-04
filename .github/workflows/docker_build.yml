@@ -106,15 +106,15 @@ jobs:
           push: ${{ env.RUNNING_ON_PRIMARY_BRANCH }}
           dockerfile: apps/docker/Dockerfile.dev-server
 
-      - name: Trigger acore-docker CI
-        if: github.repository == 'azerothcore/azerothcore-wotlk' && github.ref_name == 'master'
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.ACORE_DOCKER_REPO_ACCESS_TOKEN }}
-          repository: azerothcore/acore-docker
-          event-type: azerothcore-new-images
-          client-payload: >
-            {
-              "ref": "${{ github.ref }}",
-              "sha": "${{ github.sha }}"
-            }
+#      - name: Trigger acore-docker CI
+#        if: github.repository == 'azerothcore/azerothcore-wotlk' && github.ref_name == 'master'
+#        uses: peter-evans/repository-dispatch@v2
+#        with:
+#          token: ${{ secrets.ACORE_DOCKER_REPO_ACCESS_TOKEN }}
+#          repository: azerothcore/acore-docker
+#          event-type: azerothcore-new-images
+#          client-payload: >
+#            {
+#              "ref": "${{ github.ref }}",
+#              "sha": "${{ github.sha }}"
+#            }
