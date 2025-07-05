@@ -110,8 +110,7 @@ jobs:
         if: github.repository == 'FullHavocJosh/azerothcore-wotlk' && github.ref_name == 'master'
         uses: peter-evans/repository-dispatch@v2
         with:
-          #token: ${{ secrets.AZEROTHCORE_WOTLK_DOCKER_REPO_ACCESS_TOKEN }}
-          token: ${{ secrets.DOCKERHUB_TOKEN }}
+          token: ${{ secrets.ACORE_DOCKER_REPO_ACCESS_TOKEN }}
           repository: fullhavocjosh/azerothcore-wotlk-docker
           event-type: azerothcore-new-images
           client-payload: >
