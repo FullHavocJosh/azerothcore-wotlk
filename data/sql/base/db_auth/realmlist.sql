@@ -48,7 +48,7 @@ CREATE TABLE `realmlist` (
 LOCK TABLES `realmlist` WRITE;
 /*!40000 ALTER TABLE `realmlist` DISABLE KEYS */;
 INSERT INTO `realmlist` VALUES
-(1,'AzerothCore','127.0.0.1','127.0.0.1','255.255.255.0',8085,0,2,1,0,0,12340);
+(1,'Azerothcore-wotlk','192.168.144.99','192.168.144.99','255.255.255.0',8085,0,2,1,0,0,12340);
 /*!40000 ALTER TABLE `realmlist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,4 +61,3 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-12-17 22:32:56
-
