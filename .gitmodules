@@ -1,6 +1,3 @@
-[submodule "modules/--branch=master"]
-	path = modules/--branch=master
-	url = https://github.com/liyunfan1223/mod-playerbots.git
 [submodule "modules/mod-playerbots"]
 	path = modules/mod-playerbots
 	url = https://github.com/liyunfan1223/mod-playerbots.git
