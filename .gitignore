@@ -14,10 +14,10 @@
 /var/*
 !/var/build/.gitkeep
 !/var/ccache/.gitkeep
-/env/dist/*
+#/env/dist/*
 !/env/dist/.gitkeep
 /env/user/*
-#/.env*
+#/
 /apps/joiner
 /deps/deno
 /data/sql/custom/*
