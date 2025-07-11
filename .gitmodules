@@ -4,3 +4,6 @@
 [submodule "modules/mod-ah-bot"]
 	path = modules/mod-ah-bot
 	url = git@github.com:azerothcore/mod-ah-bot.git
+[submodule "modules/mod-individual-progression"]
+	path = modules/mod-individual-progression
+	url = git@github.com:ZhengPeiRu21/mod-individual-progression.git
