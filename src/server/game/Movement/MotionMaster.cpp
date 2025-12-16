@@ -959,7 +959,7 @@ void MotionMaster::MovePointBackwards(uint32 id, float x, float y, float z, bool
     else
     {
         LOG_DEBUG("movement.motionmaster", "Creature ({}) targeted point (ID: {} X: {} Y: {} Z: {})", _owner->GetGUID().ToString(), id, x, y, z);
-        Mutate(new PointMovementGenerator<Player>(id, x, y, z, FORCED_MOVEMENT_NONE, 0.0f, orientation, nullptr, generatePath, forceDestination, std::nullopt, ObjectGuid::Empty, true), slot);
+        Mutate(new PointMovementGenerator<Creature>(id, x, y, z, FORCED_MOVEMENT_NONE, 0.0f, orientation, nullptr, generatePath, forceDestination, std::nullopt, ObjectGuid::Empty, true), slot);
     }
 }
 
