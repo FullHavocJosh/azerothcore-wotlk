@@ -1283,9 +1283,9 @@ bool Item::CheckSoulboundTradeExpire()
     if (!owner)
         return true; // remove from tradeable list
     
-    if (GetUInt32Value(ITEM_FIELD_CREATE_PLAYED_TIME) + 2 * HOUR < GetOwner()->GetTotalPlayedTime())
+    if (GetUInt32Value(ITEM_FIELD_CREATE_PLAYED_TIME) + 2 * HOUR < owner->GetTotalPlayedTime())
     {
-        ClearSoulboundTradeable(GetOwner());
+        ClearSoulboundTradeable(owner);
         return true; // remove from tradeable list
     }
 
