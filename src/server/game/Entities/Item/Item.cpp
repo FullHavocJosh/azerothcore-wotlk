@@ -1277,11 +1277,16 @@ void Item::ClearSoulboundTradeable(Player* currentOwner)
 
 bool Item::CheckSoulboundTradeExpire()
 {
-    // called from owner's update - GetOwner() MUST be valid
+    // we have to check the owner for mod_playerbots since bots programically call methods like DestroyItem, 
+    // MoveItemToMail, DestroyItemCount which do not handle soulboundTradeable clearing.
+    Player* owner = GetOwner();
+    if (!owner)
+        return true; // expired
+    
     if (GetUInt32Value(ITEM_FIELD_CREATE_PLAYED_TIME) + 2 * HOUR < GetOwner()->GetTotalPlayedTime())
     {
         ClearSoulboundTradeable(GetOwner());
-        return true; // remove from tradeable list
+        return true; // expired
     }
 
     return false;
