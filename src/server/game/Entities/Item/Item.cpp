@@ -1281,12 +1281,12 @@ bool Item::CheckSoulboundTradeExpire()
     // MoveItemToMail, DestroyItemCount which do not handle soulboundTradeable clearing.
     Player* owner = GetOwner();
     if (!owner)
-        return true; // expired
+        return true; // remove from tradeable list
     
     if (GetUInt32Value(ITEM_FIELD_CREATE_PLAYED_TIME) + 2 * HOUR < GetOwner()->GetTotalPlayedTime())
     {
         ClearSoulboundTradeable(GetOwner());
-        return true; // expired
+        return true; // remove from tradeable list
     }
 
     return false;
