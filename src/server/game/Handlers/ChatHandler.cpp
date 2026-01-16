@@ -341,9 +341,7 @@ void WorldSession::HandleMessagechatOpcode(WorldPacket& recvData)
         {
             // Validate hyperlinks
             if (!ValidateHyperlinksAndMaybeKick(msg))
-            {
                 return;
-            }
         }
     }
 
