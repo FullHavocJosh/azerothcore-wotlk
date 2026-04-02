@@ -20,6 +20,7 @@ jobs:
     name: ${{ matrix.os }}
     env:
       BOOST_ROOT: C:\local\boost_1_82_0
+
     steps:
       - name: Checkout AzerothCore
         uses: actions/checkout@v4
@@ -31,6 +32,12 @@ jobs:
           ref: ${{ github.ref_name == 'Playerbot' && 'master' || 'test-staging' }}
           path: modules/mod-playerbots
 
+      - name: Move repo to short path
+        shell: bash
+        run: |
+          mkdir C:/ac
+          cp -r . C:/ac/
+
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.13
 
@@ -39,10 +46,12 @@ jobs:
         env:
           CONTINUOUS_INTEGRATION: true
         run: |
+          cd C:/ac
           ./acore.sh install-deps
 
       - name: Build
         shell: bash
         run: |
+          cd C:/ac
           export CTOOLS_BUILD=all
           ./acore.sh compiler build
