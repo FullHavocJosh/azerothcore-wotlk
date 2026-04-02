@@ -7,13 +7,6 @@ on:
     branches: [ "Playerbot", "test-staging" ]
 
 concurrency:
-  # One concurrency group per workflow + ref.
-  #
-  # - PRs use `refs/pull/<PR_NUMBER>/merge`, so new commits cancel older
-  #   in-progress runs for the same PR.
-  # - When a PR is merged, a push to the target branch starts a new group,
-  #   canceling any still-running PR CI.
-  # - Branch pushes are isolated by ref.
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
@@ -28,7 +21,15 @@ jobs:
     env:
       BOOST_ROOT: C:\local\boost_1_82_0
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout AzerothCore
+        uses: actions/checkout@v4
+
+      - name: Checkout Playerbot Module
+        uses: actions/checkout@v4
+        with:
+          repository: mod-playerbots/mod-playerbots
+          ref: ${{ github.ref_name == 'Playerbot' && 'master' || 'test-staging' }}
+          path: modules/mod-playerbots
 
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.13
