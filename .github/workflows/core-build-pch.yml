@@ -1,8 +1,10 @@
 name: pch-build
+
 on:
   push:
     branches:
       - 'master'
+      - 'test-staging'
   pull_request:
     types:
       - opened

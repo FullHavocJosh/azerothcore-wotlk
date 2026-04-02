@@ -1,12 +1,16 @@
 name: macos-build
 on:
   push:
-    branches: [ "Playerbot" ]
+    branches:
+      - "Playerbot"
+      - "test-staging"   # added
   pull_request:
-    branches: [ "Playerbot" ]
+    branches:
+      - "Playerbot"
+      - "test-staging"   # added
 
 concurrency:
-  group: ${{ github.head_ref }} || concat(${{ github.ref_name }}, ${{ github.workflow }})
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:

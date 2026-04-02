@@ -1,9 +1,10 @@
 name: windows-build
+
 on:
   push:
-    branches: [ "Playerbot" ]
+    branches: [ "Playerbot", "test-staging" ]
   pull_request:
-    branches: [ "Playerbot" ]
+    branches: [ "Playerbot", "test-staging" ]
 
 concurrency:
   # One concurrency group per workflow + ref.
@@ -28,14 +29,17 @@ jobs:
       BOOST_ROOT: C:\local\boost_1_82_0
     steps:
       - uses: actions/checkout@v4
+
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.13
+
       - name: Configure OS
         shell: bash
         env:
           CONTINUOUS_INTEGRATION: true
         run: |
           ./acore.sh install-deps
+
       - name: Build
         shell: bash
         run: |
