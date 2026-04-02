@@ -26,37 +26,41 @@ jobs:
             c_compiler: gcc
             cpp_compiler: g++
             build_type: Release
-            
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }}-${{ matrix.cpp_compiler }}
 
     steps:
-    - name: Checkout AzerothCore
-      uses: actions/checkout@v3
+      - name: Checkout AzerothCore
+        uses: actions/checkout@v3
 
-    - name: Set reusable strings
-      id: strings
-      shell: bash
-      run: |
-        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+      - name: Set reusable strings
+        id: strings
+        shell: bash
+        run: |
+          echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
-    - name: Checkout Playerbot Module
-      uses: actions/checkout@v3
-      with:
-        repository: mod-playerbots/mod-playerbots
-        ref: ${{ (github.head_ref || github.ref_name) == 'test-staging' && 'staging' || 'master' }}
-        path: modules/mod-playerbots
-    
-    - name: Install Requirements
-      run: sudo apt-get update && sudo apt-get install -y git cmake make gcc g++ clang libmysqlclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev mysql-server libboost-all-dev
-        
-    - name: Configure CMake
-      run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
-        -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -S ${{ github.workspace }}
+      - name: Checkout Playerbot Module
+        uses: actions/checkout@v3
+        with:
+          repository: mod-playerbots/mod-playerbots
+          # Map AC branch → PB branch
+          ref: ${{ github.ref_name == 'Playerbot' && 'master' || 'test-staging' }}
+          path: modules/mod-playerbots
 
-    - name: Build
-      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+      - name: Install Requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git cmake make gcc g++ clang \
+            libmysqlclient-dev libssl-dev libbz2-dev \
+            libreadline-dev libncurses-dev mysql-server libboost-all-dev
+
+      - name: Configure CMake
+        run: |
+          cmake -B ${{ steps.strings.outputs.build-output-dir }} \
+            -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} \
+            -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+            -S ${{ github.workspace }}
+
+      - name: Build
+        run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
