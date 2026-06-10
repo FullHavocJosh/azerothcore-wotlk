@@ -1,0 +1,39 @@
+[Unit]
+Description=AzerothCore World of Warcraft Server
+Documentation=https://www.azerothcore.org/
+After=docker.service network-online.target
+Requires=docker.service
+BindsTo=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/root/azerothcore-wotlk
+
+# Sync module configs from latest .conf.dist files
+ExecStartPre=/usr/bin/python3 /root/azerothcore-wotlk/scripts/sync-module-configs.py
+
+# Load environment to determine if this is the right time to start
+ExecStartPre=/bin/bash -c 'source /root/azerothcore-wotlk/.env &&   CURRENT_HOUR=${ENV_NAME} &&   if [ ${CURRENT_HOUR} -ge 16 ]; then     echo "Current hour is ${CURRENT_HOUR} (>= 16) - Not starting containers during off-hours" &&     exit 1;   fi'
+
+# Run database restore if enabled (testing only)
+ExecStartPre=/bin/bash -c 'source /root/azerothcore-wotlk/.env &&   if [ "${ENABLE_DB_RESTORES}" = "true" ]; then     echo "Running database restore..." &&     /root/azerothcore-wotlk/scripts/restore-databases.sh;   fi'
+
+# Start containers
+ExecStart=/usr/bin/make -C /root/azerothcore-wotlk up
+
+# Stop containers
+ExecStop=/usr/bin/docker compose -f /root/azerothcore-wotlk/docker-compose.yml down
+
+# Restart policy
+Restart=no
+TimeoutStartSec=600
+TimeoutStopSec=120
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=azerothcore
+
+[Install]
+WantedBy=multi-user.target

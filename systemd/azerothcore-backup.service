@@ -1,0 +1,16 @@
+[Unit]
+Description=AzerothCore Database Backup Service
+Documentation=https://www.azerothcore.org/
+After=azerothcore.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/azerothcore-wotlk
+
+# Run backup script
+ExecStart=/root/azerothcore-wotlk/scripts/backup-databases.sh
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=azerothcore-backup

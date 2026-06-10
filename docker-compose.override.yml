@@ -1,0 +1,116 @@
+# docker-compose.override.yml.template
+# Environment-specific configuration template
+# Generated from .env file using envsubst
+#
+# NUMA Strategy: Pin all containers to same NUMA node for optimal memory locality
+# - Production (Node 1): CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39
+# - Testing (Node 0): CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38
+
+services:
+  ac-database:
+    container_name: ac-database
+    
+    # NUMA CPU pinning - same node as worldserver
+    cpuset: "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39"
+    
+    # Resource limits for database
+    deploy:
+      resources:
+        limits:
+          cpus: '20'
+          memory: 64G
+        reservations:
+          cpus: '8'
+          memory: 32G
+    
+    # Shared memory for database operations
+    shm_size: '4gb'
+    
+    # MySQL custom configuration
+    volumes:
+      - ./mysql-custom.cnf:/etc/mysql/conf.d/custom.cnf:ro
+
+  ac-worldserver:
+    container_name: ac-worldserver
+    
+    # NUMA CPU pinning - restricts to specific NUMA node CPUs
+    cpuset: "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39"
+    
+    # Port mapping
+    # Note: Worldserver always listens on 8585 internally, map external port to internal 8585
+    ports:
+      - "8585:8585"
+      - "7878:7878"
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '20'
+          memory: 100G
+        reservations:
+          cpus: '15'
+          memory: 50G
+    
+    # Shared memory for inter-thread communication
+    shm_size: '4gb'
+    
+    # Database configuration
+    environment:
+      AC_UPDATES_ENABLE_DATABASES: 7
+      AC_LOGIN_DATABASE_INFO: "ac-database;3306;root;password;acore_auth"
+      AC_WORLD_DATABASE_INFO: "ac-database;3306;root;password;acore_world"
+      AC_CHARACTER_DATABASE_INFO: "ac-database;3306;root;password;acore_characters"
+      AC_PLAYERBOTS_DATABASE_INFO: "ac-database;3306;root;password;acore_playerbots"
+      AC_REALM_ID: 1
+    
+    # Volume mounts
+    volumes:
+      - ${DOCKER_VOL_ETC:-./env/dist/etc}:/azerothcore/env/dist/etc
+      - ${DOCKER_VOL_LOGS:-./env/dist/logs}:/azerothcore/env/dist/logs:delegated
+      - ${DOCKER_VOL_DATA:-ac-client-data}:/azerothcore/env/dist/data/:ro
+      - ./modules:/azerothcore/modules:ro
+    
+    ulimits:
+      # Increase file descriptors for many connections
+      nofile:
+        soft: 65536
+        hard: 65536
+    
+    # Override dependencies - remove db-import since we restore from production backups
+    depends_on:
+      ac-database:
+        condition: service_healthy
+      ac-client-data-init:
+        condition: service_completed_successfully
+
+  ac-authserver:
+    container_name: ac-authserver
+    
+    # NUMA CPU pinning - same node as worldserver and database
+    cpuset: "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39"
+    
+    # Resource limits for authserver
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 512M
+    
+    # Shared memory for authserver operations
+    shm_size: '256mb'
+    
+    profiles:
+      - default
+
+  ac-db-import:
+    # Skip database updates - we restore from production backups
+    image: busybox:latest
+    command: ["true"]
+    container_name: ac-db-import
+
+  ac-client-data-init:
+    container_name: ac-client-data-init
