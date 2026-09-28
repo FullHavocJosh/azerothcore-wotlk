@@ -14,7 +14,7 @@ Uptime Kuma acts as a central notification hub, receiving push notifications fro
 
 ## Prerequisites
 
-- Uptime Kuma installed and accessible at: `http://homeassistant.rollet.family:3001` or `http://homeassistant.rollet.family:3001`
+- Uptime Kuma installed and accessible at: `http://homeassistant.rollet.family:3001`
 - Discord webhook URL (already configured): `https://discord.com/api/webhooks/<id>/<token>`
 - Access to the AzerothCore server at `root@AzerothCore`
 
@@ -501,7 +501,7 @@ TZ='America/New_York' date  # Check EST time
 
 - Uptime Kuma: `http://homeassistant.rollet.family:3001`
 - Alternative URL: `http://homeassistant.rollet.family:3001`
-- Discord Webhook: `https://discord.com/api/webhooks/1445557884950679647/...`
+- Discord Webhook: `https://discord.com/api/webhooks/<id>/<token>`
 
 ### Quick Commands
 
