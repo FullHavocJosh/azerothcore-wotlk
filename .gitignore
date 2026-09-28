@@ -16,15 +16,10 @@
 !/var/build/.gitkeep
 !/var/ccache/.gitkeep
 /env/dist/*
-!/env/dist/etc/
-/env/dist/etc/*.dist
-!/env/dist/etc/modules/
-/env/dist/etc/modules/*.dist
 !/env/dist/.gitkeep
 /env/user/*
 /.env*
 /e2e/.env
-!/.env.example
 /apps/joiner
 /deps/deno
 /data/sql/custom/*
@@ -33,7 +28,6 @@
 
 /*.override.yml
 /*.override.yaml
-!/docker-compose.override.yml.template
 
 !.gitkeep
 
@@ -143,31 +137,3 @@ e2e/go.work.sum
 
 .cache
 compile_commands.json
-
-# AzerothCore update script configuration
-.notification-config
-
-# ==================
-# Environment Management System
-# ==================
-.env
-.env.production
-.env.testing
-.env.local
-
-# Docker override files should not be committed (generated from template)
-docker-compose.override.yml
-
-# Environment-specific generated files (do not commit)
-docker-compose.override.yml
-docker-compose.override.yml.backup
-
-# Backup directories and files
-.backup-*/
-*.backup
-*-backup-*/
-
-# Environment symlinks
-.env
-logs/
-*.backup-*
