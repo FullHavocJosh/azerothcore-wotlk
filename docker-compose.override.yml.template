@@ -1,0 +1,116 @@
+# docker-compose.override.yml.template
+# Environment-specific configuration template
+# Generated from .env file using envsubst
+#
+# NUMA Strategy: Pin all containers to same NUMA node for optimal memory locality
+# - Production (Node 1): CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39
+# - Testing (Node 0): CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38
+
+services:
+  ac-database:
+    container_name: ${CONTAINER_PREFIX}-database
+    
+    # NUMA CPU pinning - same node as worldserver
+    cpuset: "${CPUSET_CPUS}"
+    
+    # Resource limits for database
+    deploy:
+      resources:
+        limits:
+          cpus: '${DATABASE_CPU_LIMIT}'
+          memory: ${DATABASE_MEMORY_LIMIT}
+        reservations:
+          cpus: '${DATABASE_CPU_RESERVATION}'
+          memory: ${DATABASE_MEMORY_RESERVATION}
+    
+    # Shared memory for database operations
+    shm_size: '${DATABASE_SHM_SIZE}'
+    
+    # MySQL custom configuration
+    volumes:
+      - ./mysql-custom.cnf:/etc/mysql/conf.d/custom.cnf:ro
+
+  ac-worldserver:
+    container_name: ${CONTAINER_PREFIX}-worldserver
+    
+    # NUMA CPU pinning - restricts to specific NUMA node CPUs
+    cpuset: "${CPUSET_CPUS}"
+    
+    # Port mapping
+    # Note: Worldserver always listens on 8585 internally, map external port to internal 8585
+    ports:
+      - "${WORLDSERVER_PORT}:8585"
+      - "${SOAP_PORT}:7878"
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '${WORLDSERVER_CPU_LIMIT}'
+          memory: ${WORLDSERVER_MEMORY_LIMIT}
+        reservations:
+          cpus: '${WORLDSERVER_CPU_RESERVATION}'
+          memory: ${WORLDSERVER_MEMORY_RESERVATION}
+    
+    # Shared memory for inter-thread communication
+    shm_size: '${WORLDSERVER_SHM_SIZE}'
+    
+    # Database configuration
+    environment:
+      AC_UPDATES_ENABLE_DATABASES: ${ENABLE_DB_UPDATES}
+      AC_LOGIN_DATABASE_INFO: "${SHARED_AUTH_DB_HOST};${SHARED_AUTH_DB_PORT};${SHARED_AUTH_DB_USER};${SHARED_AUTH_DB_PASSWORD};${SHARED_AUTH_DB_NAME}"
+      AC_WORLD_DATABASE_INFO: "${CONTAINER_PREFIX}-database;3306;root;password;acore_world"
+      AC_CHARACTER_DATABASE_INFO: "${CONTAINER_PREFIX}-database;3306;root;password;acore_characters"
+      AC_PLAYERBOTS_DATABASE_INFO: "${CONTAINER_PREFIX}-database;3306;root;password;acore_playerbots"
+      AC_REALM_ID: ${REALM_ID}
+    
+    # Volume mounts
+    volumes:
+      - ${DOCKER_VOL_ETC:-./env/dist/etc}:/azerothcore/env/dist/etc
+      - ${DOCKER_VOL_LOGS:-./env/dist/logs}:/azerothcore/env/dist/logs:delegated
+      - ${DOCKER_VOL_DATA:-ac-client-data}:/azerothcore/env/dist/data/:ro
+      - ./modules:/azerothcore/modules:ro
+    
+    ulimits:
+      # Increase file descriptors for many connections
+      nofile:
+        soft: 65536
+        hard: 65536
+    
+    # Override dependencies - remove db-import since we restore from production backups
+    depends_on:
+      ac-database:
+        condition: service_healthy
+      ac-client-data-init:
+        condition: service_completed_successfully
+
+  ac-authserver:
+    container_name: ${CONTAINER_PREFIX}-authserver
+    
+    # NUMA CPU pinning - same node as worldserver and database
+    cpuset: "${CPUSET_CPUS}"
+    
+    # Resource limits for authserver
+    deploy:
+      resources:
+        limits:
+          cpus: '${AUTHSERVER_CPU_LIMIT}'
+          memory: ${AUTHSERVER_MEMORY_LIMIT}
+        reservations:
+          cpus: '${AUTHSERVER_CPU_RESERVATION}'
+          memory: ${AUTHSERVER_MEMORY_RESERVATION}
+    
+    # Shared memory for authserver operations
+    shm_size: '${AUTHSERVER_SHM_SIZE}'
+    
+    profiles:
+      - ${AUTHSERVER_PROFILE}
+
+  ac-db-import:
+    # Skip database updates - we restore from production backups
+    image: busybox:latest
+    command: ["true"]
+    container_name: ${CONTAINER_PREFIX}-db-import
+
+  ac-client-data-init:
+    container_name: ${CONTAINER_PREFIX}-client-data-init

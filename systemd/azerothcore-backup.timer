@@ -1,0 +1,11 @@
+[Unit]
+Description=AzerothCore Database Backup Timer (Daily 11 PM - Before Server Shutdown)
+Documentation=https://www.azerothcore.org/
+
+[Timer]
+# Run at 11:00 PM daily (1 hour before server shutdown at 11:59 PM)
+OnCalendar=*-*-* 23:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
