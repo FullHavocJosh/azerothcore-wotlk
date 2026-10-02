@@ -24,8 +24,11 @@
 	branch = main
 [submodule "modules/mod-ollama-chat"]
 	path = modules/mod-ollama-chat
-	url = https://github.com/DustinHendrickson/mod-ollama-chat.git
-	branch = main
+	# Temporarily pointed at our fork: upstream main doesn't compile
+	# (Channel::IsOn() is private -- see DustinHendrickson/mod-ollama-chat#183).
+	# Revert to upstream once #183 merges.
+	url = git@github.com:FullHavocJosh/mod-ollama-chat.git
+	branch = fix/channel-ison-private
 [submodule "modules/mod-auto-guild-real-players"]
 	path = modules/mod-auto-guild-real-players
 	url = git@github.com:FullHavocJosh/mod-auto-guild-real-players.git
