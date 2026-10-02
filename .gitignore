@@ -137,3 +137,10 @@ e2e/go.work.sum
 
 .cache
 compile_commands.json
+
+# AzerothCore update script configuration (host-local state, not shared)
+.notification-config
+
+# Ad-hoc backup files created directly on a host (timestamped one-offs,
+# e.g. docker-compose.override.yml.backup-<timestamp>-<label>)
+*.backup-*
