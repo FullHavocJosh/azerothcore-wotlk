@@ -1,5 +1,5 @@
 [Unit]
-Description=AzerothCore Database Backup Service
+Description=AzerothCore Database and Config Backup Service
 Documentation=https://www.azerothcore.org/
 After=azerothcore.service
 
@@ -7,8 +7,9 @@ After=azerothcore.service
 Type=oneshot
 WorkingDirectory=/root/azerothcore-wotlk
 
-# Run backup script
+# Run backup scripts
 ExecStart=/root/azerothcore-wotlk/scripts/backup-databases.sh
+ExecStart=/root/azerothcore-wotlk/scripts/backup-configs.sh
 
 # Logging
 StandardOutput=journal
