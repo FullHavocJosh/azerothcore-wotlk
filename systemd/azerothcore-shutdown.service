@@ -1,0 +1,15 @@
+[Unit]
+Description=AzerothCore Shutdown Service (Off-Hours)
+Documentation=https://www.azerothcore.org/
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/azerothcore-wotlk
+
+# Run shutdown script
+ExecStart=/root/azerothcore-wotlk/scripts/shutdown-containers.sh
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=azerothcore-shutdown

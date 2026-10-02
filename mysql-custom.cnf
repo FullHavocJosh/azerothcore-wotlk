@@ -1,0 +1,80 @@
+[mysqld]
+# Connection settings
+max_connections = 1000
+max_prepared_stmt_count = 500000
+
+# InnoDB Buffer Pool (critical for performance)
+# Optimized for 1.32 GB database with extreme growth headroom (24x database size)
+# 32 GB allows entire database + indexes + temp tables to fit in memory
+innodb_buffer_pool_size = 32G
+innodb_buffer_pool_instances = 8
+
+# Log files for write performance
+innodb_log_file_size = 2G
+innodb_log_buffer_size = 256M
+
+# Thread and connection handling
+innodb_read_io_threads = 16
+innodb_write_io_threads = 16
+thread_cache_size = 100
+
+# InnoDB optimizations for SSD
+innodb_flush_method = O_DIRECT
+innodb_flush_log_at_trx_commit = 2
+innodb_file_per_table = 1
+
+# Table cache
+table_open_cache = 8192
+table_definition_cache = 4096
+
+# Temporary tables
+tmp_table_size = 1G
+max_heap_table_size = 1G
+
+# Sort and join buffers
+sort_buffer_size = 8M
+read_buffer_size = 4M
+read_rnd_buffer_size = 8M
+join_buffer_size = 8M
+
+# Performance Schema (optional, can disable if not needed)
+performance_schema = ON
+
+# ===== DEADLOCK MITIGATION SETTINGS =====
+# Increase lock wait timeout to give queries more time before failing
+innodb_lock_wait_timeout = 120
+
+# Enable deadlock detection (already on, but explicit)
+innodb_deadlock_detect = ON
+
+# Print all deadlocks to error log for debugging
+innodb_print_all_deadlocks = ON
+
+# Rollback entire transaction on timeout (prevents fatal deadlocks)
+innodb_rollback_on_timeout = ON
+
+# Reduce lock contention with larger transaction isolation
+# Note: Keep default READ-COMMITTED for AzerothCore compatibility
+# transaction_isolation = READ-COMMITTED
+
+# Increase concurrent transactions handling
+innodb_thread_concurrency = 0
+
+# Optimize INSERT buffer for bulk operations
+innodb_change_buffering = all
+innodb_change_buffer_max_size = 50
+
+# Reduce page locking contention
+innodb_adaptive_hash_index = ON
+innodb_adaptive_hash_index_parts = 16
+
+# ===== ADDITIONAL DEADLOCK OPTIMIZATIONS (Added 2025-12-31) =====
+# Reduce transaction isolation level to minimize locking
+# This is safe for AzerothCore and reduces deadlock probability
+transaction_isolation = READ-COMMITTED
+
+# Increase row lock wait queue
+innodb_sync_array_size = 8
+
+# Optimize locking for concurrent pet operations (safe for InnoDB)
+innodb_autoinc_lock_mode = 2

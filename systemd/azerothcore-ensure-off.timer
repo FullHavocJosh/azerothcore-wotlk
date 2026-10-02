@@ -1,0 +1,12 @@
+[Unit]
+Description=AzerothCore Ensure Off Timer (Evening Hours)
+Documentation=https://www.azerothcore.org/
+
+[Timer]
+# Run every hour from 5 PM to 11 PM
+OnCalendar=*-*-* 17,18,19,20,21,22,23:00:00
+Persistent=true
+Unit=azerothcore-shutdown.service
+
+[Install]
+WantedBy=timers.target
