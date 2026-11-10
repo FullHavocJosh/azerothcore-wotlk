@@ -18,10 +18,6 @@
 	path = modules/mod-junk-to-gold
 	url = git@github.com:noisiver/mod-junk-to-gold.git
 	branch = master
-[submodule "modules/mod-player-bot-level-brackets"]
-	path = modules/mod-player-bot-level-brackets
-	url = git@github.com:DustinHendrickson/mod-player-bot-level-brackets.git
-	branch = main
 [submodule "modules/mod-ollama-chat"]
 	path = modules/mod-ollama-chat
 	url = https://github.com/DustinHendrickson/mod-ollama-chat.git
