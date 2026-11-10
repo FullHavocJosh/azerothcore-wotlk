@@ -5,7 +5,8 @@
   "git-submodules": {
     "enabled": true
   },
-  "schedule": ["before 6am on monday"],
+  "timezone": "America/New_York",
+  "schedule": ["before 3am on tuesday"],
   "packageRules": [
     {
       "matchManagers": ["git-submodules"],
