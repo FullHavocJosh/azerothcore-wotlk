@@ -77,10 +77,12 @@ services:
         soft: 65536
         hard: 65536
     
-    # Override dependencies - remove db-import since we restore from production backups
+    # Wait for db-import so core/module SQL updates are applied before startup
     depends_on:
       ac-database:
         condition: service_healthy
+      ac-db-import:
+        condition: service_completed_successfully
       ac-client-data-init:
         condition: service_completed_successfully
 
@@ -107,10 +109,11 @@ services:
       - ${AUTHSERVER_PROFILE}
 
   ac-db-import:
-    # Skip database updates - we restore from production backups
-    image: busybox:latest
-    command: ["true"]
+    # Real dbimport (upstream image): applies pending core and module SQL updates
     container_name: ${CONTAINER_PREFIX}-db-import
+    environment:
+      AC_UPDATES_ENABLE_DATABASES: 7
+      AC_PLAYERBOTS_DATABASE_INFO: "${CONTAINER_PREFIX}-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_playerbots"
 
   ac-client-data-init:
     container_name: ${CONTAINER_PREFIX}-client-data-init
