@@ -1,1 +1,0 @@
-/Users/havoc/ai-info/azerothcore-wotlk/AGENT.md
